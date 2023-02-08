@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
 import ReactDOM from 'react-dom/client';
 import * as esbuild from 'esbuild-wasm';
-import { unpkgPathPlugin } from './plugin/unpkPathPlugin';
+import { unpkgPlugin } from './plugin/unpkPlugin';
+import { fetchPlugin } from './plugin/fetchPlugin';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 const App = () => {
   const [code, setCode] = useState('');
@@ -31,7 +30,7 @@ const App = () => {
       entryPoints: ['index.js'],
       bundle: true,
       write: false,
-      plugins: [unpkgPathPlugin(input)],
+      plugins: [unpkgPlugin(), fetchPlugin(input)],
       define: {
         'process.env.NODE.ENV': "'production'",
         global: 'window',
