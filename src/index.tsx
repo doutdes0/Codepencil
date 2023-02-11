@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import * as esbuild from 'esbuild-wasm';
 import { unpkgPlugin } from './plugin/unpkPlugin';
 import { fetchPlugin } from './plugin/fetchPlugin';
+import CodeEditor from './components/code-editor';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
@@ -67,6 +68,7 @@ const App = () => {
 
   return (
     <div>
+      <CodeEditor />
       <form onSubmit={onSubmit}>
         <textarea
           value={input}
@@ -77,7 +79,12 @@ const App = () => {
         <button type="submit">Submit</button>
       </form>
       <pre>{code}</pre>
-      <iframe title="preview" ref={iframe} srcDoc={html} sandbox="allow-scripts"></iframe>
+      <iframe
+        title="preview"
+        ref={iframe}
+        srcDoc={html}
+        sandbox="allow-scripts"
+      ></iframe>
     </div>
   );
 };
