@@ -23,8 +23,7 @@ const App = () => {
     });
   };
 
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const onChange = async () => {
     if (!ref.current) {
       return;
     }
@@ -68,16 +67,17 @@ const App = () => {
 
   return (
     <div>
-      <CodeEditor />
-      <form onSubmit={onSubmit}>
-        <textarea
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          cols={30}
-          rows={10}
-        ></textarea>
-        <button type="submit">Submit</button>
-      </form>
+      <CodeEditor
+        onChange={(value) => setInput(value)}
+        initialValue='const foo = "bar";'
+      />
+      <textarea
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        cols={30}
+        rows={10}
+      ></textarea>
+      <button onClick={onChange}>Submit</button>
       <pre>{code}</pre>
       <iframe
         title="preview"
