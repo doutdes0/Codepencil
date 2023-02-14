@@ -1,0 +1,35 @@
+.mtk100.Identifier.JsxElement.Bracket {
+  color: rgb(45, 112, 228);
+}
+
+.mtk1000.Identifier.JsxOpeningElement.Bracket {
+  color: rgb(45, 112, 228);
+  font-weight: bold;
+}
+
+.mtk1001.Identifier.JsxClosingElement.Bracket {
+  color: rgb(45, 112, 228);
+  font-weight: lighter;
+}
+
+.mtk101.Identifier.JsxOpeningElement.Identifier {
+  color: steelblue;
+}
+
+.mtk102.Identifier.JsxClosingElement.Identifier {
+  color: steelblue;
+  font-weight: lighter;
+}
+
+.mtk103.Identifier.JsxAttribute.Identifier {
+  color: steelblue;
+}
+
+.mtk104.JsxElement.JsxText {
+  color: rgb(255, 255, 255);
+}
+
+.mtk105.glyph.Identifier.JsxElement {
+  background: #61dafb;
+  opacity: 0.25;
+}

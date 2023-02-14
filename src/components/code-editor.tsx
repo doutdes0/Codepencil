@@ -4,6 +4,7 @@ import prettier from 'prettier';
 import parser from 'prettier/parser-babel';
 import codeShift from 'jscodeshift';
 import Highlighter from 'monaco-jsx-highlighter';
+import './jsx-highlight.css';
 
 interface CodeEditorProps {
   initialValue: string;
