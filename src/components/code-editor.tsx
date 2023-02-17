@@ -28,6 +28,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
       monacoEditor
     );
     highlighter.highLightOnDidChangeModelContent(
+      //Removing unnecessary error logs
       () => {},
       () => {},
       undefined,
@@ -46,7 +47,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
       semi: true,
       singleQuote: true,
     });
-    //Push formated value bacl to editor
+    //Push formated value back to editor
     editorRef.current.setValue(formated);
   };
   return (
