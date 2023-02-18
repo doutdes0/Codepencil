@@ -1,9 +1,20 @@
 .iframe-wrapper {
   flex: 1;
+  position: relative;
+  height: 100%;
+}
+/* Fix issue with drag event transfering to iframe */
+.react-draggable-transparent-selection .iframe-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 .iframe-wrapper iframe {
   height: 100%;
   width: 100%;
   border-style: none;
-  background-color: black;
+  background-color: rgb(210, 202, 202);
 }
