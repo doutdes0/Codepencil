@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import './iframe.css';
 
 interface IframeProps {
   code: string;
@@ -33,12 +34,14 @@ const Iframe: React.FC<IframeProps> = ({ code }) => {
   }, [code]);
 
   return (
-    <iframe
-      title="preview"
-      ref={iframe}
-      srcDoc={html}
-      sandbox="allow-scripts"
-    ></iframe>
+    <div className="iframe-wrapper">
+      <iframe
+        title="preview"
+        ref={iframe}
+        srcDoc={html}
+        sandbox="allow-scripts"
+      ></iframe>
+    </div>
   );
 };
 export default Iframe;

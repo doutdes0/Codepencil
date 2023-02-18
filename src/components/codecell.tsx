@@ -2,6 +2,8 @@ import { useState } from 'react';
 import CodeEditor from './code-editor';
 import Iframe from './iframe';
 import bundle from '../bundler';
+import Resizable from './resizable';
+import './codecell.css';
 
 const CodeCell = () => {
   const [code, setCode] = useState('');
@@ -13,14 +15,15 @@ const CodeCell = () => {
   };
 
   return (
-    <div>
-      <CodeEditor
-        onChange={(value) => setInput(value)}
-        initialValue='const foo = "bar";'
-      />
-      <button onClick={onChange}>Submit</button>
-      <Iframe code={code} />
-    </div>
+    <Resizable direction="vertical">
+      <div className="codecell-wrapper">
+        <CodeEditor
+          onChange={(value) => setInput(value)}
+          initialValue='const foo = "bar";'
+        />
+        <Iframe code={code} />
+      </div>
+    </Resizable>
   );
 };
 

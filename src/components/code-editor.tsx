@@ -4,7 +4,7 @@ import prettier from 'prettier';
 import parser from 'prettier/parser-babel';
 import codeShift from 'jscodeshift';
 import Highlighter from 'monaco-jsx-highlighter';
-import './jsx-highlight.css';
+import './code-editor.css';
 
 interface CodeEditorProps {
   initialValue: string;
@@ -51,13 +51,18 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
     editorRef.current.setValue(formated);
   };
   return (
-    <div>
-      <button onClick={onFormat}>Format</button>
+    <div className="monaco-wrapper">
+      <button
+        className="format-btn"
+        onClick={onFormat}
+      >
+        Format
+      </button>
       <MonacoEditor
         editorDidMount={onEditorDidMount}
         value={initialValue}
+        className="monaco-editor"
         language="javascript"
-        height="300px"
         theme="dark"
         options={{
           wordWrap: 'on',

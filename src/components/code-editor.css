@@ -1,3 +1,32 @@
+.monaco-editor {
+  height: 100%;
+  width: 100%;
+}
+.monaco-wrapper {
+  flex: 1;
+  position: relative;
+}
+.format-btn {
+  position: absolute;
+  top: 5px;
+  right: 16px;
+  z-index: 5;
+  border-radius: 8px;
+  border: none;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 3px 10px;
+  background: #fcaa2f;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.monaco-wrapper:hover .format-btn {
+  opacity: 1;
+}
+
+/* JSX-highlighter */
 .mtk100.Identifier.JsxElement.Bracket {
   color: rgb(45, 112, 228);
 }
