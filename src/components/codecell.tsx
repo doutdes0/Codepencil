@@ -17,10 +17,13 @@ const CodeCell = () => {
   return (
     <Resizable direction="vertical">
       <div className="codecell-wrapper">
-        <CodeEditor
-          onChange={(value) => setInput(value)}
-          initialValue='const foo = "bar";'
-        />
+        <Resizable direction="horizontal">
+          <CodeEditor
+            onChange={(value) => setInput(value)}
+            initialValue='const foo = "bar";'
+          />
+        </Resizable>
+
         <Iframe code={code} />
       </div>
     </Resizable>
