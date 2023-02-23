@@ -21,13 +21,16 @@ const Resizable: React.FC<ResizableProps> = ({ direction, children }) => {
       timer = setTimeout(() => {
         setInnerWidth(window.innerWidth);
         setInnerHeight(window.innerHeight);
+        if (width > window.innerWidth * 0.6) {
+          setWidth(window.innerWidth * 0.6);
+        }
       }, 100);
     };
     window.addEventListener('resize', listener);
     return () => {
       window.removeEventListener('resize', listener);
     };
-  }, []);
+  }, [width]);
 
   let resizableProps: ResizableBoxProps;
   if (direction === 'vertical') {
