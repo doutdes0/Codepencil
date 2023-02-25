@@ -30,7 +30,9 @@ const Iframe: React.FC<IframeProps> = ({ code }) => {
     //Reset iframe before each bundling/whenever code changes
     iframe.current.srcDoc = html;
     //Post a message from parent window to iframe, containing bundled code
-    iframe.current.contentWindow.postMessage(code, '*');
+    setTimeout(() => {
+      iframe.current.contentWindow.postMessage(code, '*');
+    }, 50);
   }, [code]);
 
   return (
