@@ -15,7 +15,7 @@ const html = ` <html>
         eval(e.data);
       } catch(err) {
         const root = document.getElementById('root');
-        root.innerHTML = '<div>' + err + '</div>';
+        root.innerHTML = '<div style="color:red;font-family: Consolas, Courier New, monospace;">' + err + '</div>';
         console.error(err);
       }
       
