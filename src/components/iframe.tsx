@@ -3,6 +3,7 @@ import './iframe.css';
 
 interface IframeProps {
   code: string;
+  bundlerErr: string;
 }
 
 const html = ` <html>
@@ -10,22 +11,29 @@ const html = ` <html>
 <body>
   <div id="root"></div>
   <script>
+  const handleError = (err) => {
+    const root = document.getElementById('root');
+    root.innerHTML = '<div style="color:red;font-family: Consolas, Courier New, monospace;">' + err + '</div>';
+    console.error(err);
+  };
+    window.addEventListener('error', (e) => {
+      e.preventDefault();
+      handleError(e.error)
+    });
     window.addEventListener('message', (e) => {
       try {
         eval(e.data);
-      } catch(err) {
-        const root = document.getElementById('root');
-        root.innerHTML = '<div style="color:red;font-family: Consolas, Courier New, monospace;">' + err + '</div>';
-        console.error(err);
+      } catch (err) {
+        handleError(err);
       }
-      
     }, false);
   </script>
 </body>
 </html>`;
 
-const Iframe: React.FC<IframeProps> = ({ code }) => {
+const Iframe: React.FC<IframeProps> = ({ code, bundlerErr }) => {
   const iframe = useRef<any>();
+
   useEffect(() => {
     //Reset iframe before each bundling/whenever code changes
     iframe.current.srcDoc = html;
@@ -43,6 +51,7 @@ const Iframe: React.FC<IframeProps> = ({ code }) => {
         srcDoc={html}
         sandbox="allow-scripts"
       ></iframe>
+      {bundlerErr && <div className="bundler-error">{bundlerErr}</div>}
     </div>
   );
 };

@@ -19,3 +19,10 @@
   border-style: none;
   background-color: rgb(210, 202, 202);
 }
+.bundler-error {
+  font-family: Consolas, Courier New, monospace;
+  color: red;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}

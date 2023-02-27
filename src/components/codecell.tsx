@@ -8,15 +8,18 @@ import './codecell.css';
 const CodeCell = () => {
   const [code, setCode] = useState('');
   const [input, setInput] = useState('');
+  const [err, setErr] = useState('');
 
   useEffect(() => {
     const timer = setTimeout(async () => {
       const res = await bundle(input);
-      setCode(res);
+      setCode(res.code);
+      setErr(res.err);
     }, 1000);
 
     return () => {
       clearTimeout(timer);
+      setErr('');
     };
   }, [input]);
 
@@ -29,8 +32,10 @@ const CodeCell = () => {
             initialValue='const foo = "bar";'
           />
         </Resizable>
-
-        <Iframe code={code} />
+        <Iframe
+          code={code}
+          bundlerErr={err}
+        />
       </div>
     </Resizable>
   );
