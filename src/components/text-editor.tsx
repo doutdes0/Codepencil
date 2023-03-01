@@ -1,5 +1,6 @@
 import MDEditor from '@uiw/react-md-editor';
 import { useState, useEffect, useRef } from 'react';
+import './text-editor.css';
 
 const TextEditor: React.FC = () => {
   const [input, setInput] = useState('');
@@ -22,21 +23,23 @@ const TextEditor: React.FC = () => {
   if (editing) {
     return (
       <div ref={editorRef}>
-        <MDEditor
-          value={input}
-          onChange={(value) => {
-            setInput(value!);
-          }}
-        />
+        <div className="text-editor-wrapper">
+          <MDEditor
+            value={input}
+            height={window.innerHeight * 0.6}
+            onChange={(value) => {
+              setInput(value || '');
+            }}
+          />
+        </div>
       </div>
     );
   }
   return (
     <div onClick={() => setEditing(true)}>
-      <MDEditor.Markdown
-        source={input}
-        prefixCls="Click me"
-      />
+      <div className="text-editor-wrapper">
+        <MDEditor.Markdown source={input ? input : 'Click me to edit'} />
+      </div>
     </div>
   );
 };
