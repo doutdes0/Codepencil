@@ -1,6 +1,16 @@
-.text-editor-wrapper {
+.editor-wrapper {
   background-color: transparent;
   padding: 1.5rem;
+}
+.md-wrapper {
+  padding: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 0.25rem;
+  background-color: #37414b;
+  box-shadow: 10px 15px 20px #362e4ac4;
+}
+.md-wrapper .wmde-markdown {
+  background-color: #37414b;
 }
 .w-md-editor-bar svg {
   display: none;
@@ -11,7 +21,6 @@
   background-position: 50%;
   height: 10px;
   width: 100%;
-  border-radius: 0 0 5px 5px;
   cursor: row-resize;
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=');
 }

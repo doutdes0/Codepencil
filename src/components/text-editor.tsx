@@ -23,7 +23,7 @@ const TextEditor: React.FC = () => {
   if (editing) {
     return (
       <div ref={editorRef}>
-        <div className="text-editor-wrapper">
+        <div className="editor-wrapper">
           <MDEditor
             value={input}
             height={window.innerHeight * 0.6}
@@ -37,7 +37,7 @@ const TextEditor: React.FC = () => {
   }
   return (
     <div onClick={() => setEditing(true)}>
-      <div className="text-editor-wrapper">
+      <div className="md-wrapper">
         <MDEditor.Markdown source={input ? input : 'Click me to edit'} />
       </div>
     </div>
