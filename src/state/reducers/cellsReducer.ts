@@ -1,6 +1,7 @@
 import { Action } from '../actions';
 import { ActionType } from '../action-types';
-import { Cell } from '../cell';
+import { Cell, randomId } from '../cell';
+import produce from 'immer';
 
 interface CellState {
   data: { [id: string]: Cell };
@@ -16,33 +17,43 @@ const initialState: CellState = {
   order: [],
 };
 
-const reducer = (state: CellState = initialState, action: Action): CellState => {
+const reducer = produce((state: CellState = initialState, action: Action) => {
   switch (action.type) {
     case ActionType.DELETE_CELL:
-      const { [action.payload]: remove, ...newData } = state.data;
-      return {
-        ...state,
-        order: state.order.filter((id) => id !== action.payload),
-        data: newData,
-      };
+      delete state.data[action.payload];
+      state.order = state.order.filter((id) => id !== action.payload);
+      break;
+
     case ActionType.UPDATE_CELL:
       const { id, content } = action.payload;
-      return {
-        ...state,
-        data: {
-          ...state.data,
-          [id]: {
-            ...state.data[id],
-            content,
-          },
-        },
-      };
+      state.data[id].content = content;
+      break;
+
     case ActionType.MOVE_CELL:
-      return state;
+      const { direction } = action.payload;
+      const i = state.order.findIndex((id) => id === action.payload.id);
+      const targetI = direction === 'up' ? i + 1 : i - 1;
+      if (targetI < 0 || targetI > state.order.length - 1) return;
+      [state.order[i], state.order[targetI]] = [state.order[targetI], state.order[i]];
+      break;
+
     case ActionType.INSERT_CELL_BEFORE:
-      return state;
+      const cell: Cell = {
+        content: '',
+        type: action.payload.type,
+        id: randomId(),
+      };
+      state.data[cell.id] = cell;
+      const index = state.order.findIndex((id) => id === action.payload.id);
+      if (index < 0) {
+        state.order.push(cell.id);
+      } else {
+        state.order.splice(index, 0, cell.id);
+      }
+      break;
     default:
       return state;
   }
-};
+}, initialState);
+
 export default reducer;

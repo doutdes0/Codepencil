@@ -6,3 +6,7 @@ export interface Cell {
   type: CellTypes;
   content: string;
 }
+
+export const randomId = () => {
+  return Math.random().toString(36).substring(0, 4);
+};

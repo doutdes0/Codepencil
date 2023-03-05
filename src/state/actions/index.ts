@@ -11,7 +11,7 @@ export interface DeleteCell {
 }
 export interface InsertCell {
   type: ActionType.INSERT_CELL_BEFORE;
-  payload: { id: string; type: CellTypes };
+  payload: { id: string | null; type: CellTypes };
 }
 export interface UpdateCell {
   type: ActionType.UPDATE_CELL;
