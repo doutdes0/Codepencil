@@ -51,6 +51,7 @@ const reducer = produce((state: CellState = initialState, action: Action) => {
         state.order.splice(index, 0, cell.id);
       }
       break;
+
     default:
       return state;
   }
