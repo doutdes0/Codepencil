@@ -3,16 +3,22 @@ import CodeEditor from './code-editor';
 import Iframe from './iframe';
 import bundle from '../bundler';
 import Resizable from './resizable';
+import { useActions } from '../hooks/use-actions';
+import { Cell } from '../state';
 import './codecell.css';
 
-const CodeCell = () => {
+interface CodeCellProps {
+  cell: Cell;
+}
+
+const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
+  const { updateCell } = useActions();
   const [code, setCode] = useState('');
-  const [input, setInput] = useState('');
   const [err, setErr] = useState('');
 
   useEffect(() => {
     const timer = setTimeout(async () => {
-      const res = await bundle(input);
+      const res = await bundle(cell.content);
       setCode(res.code);
       setErr(res.err);
     }, 1000);
@@ -21,15 +27,15 @@ const CodeCell = () => {
       clearTimeout(timer);
       setErr('');
     };
-  }, [input]);
+  }, [cell.content]);
 
   return (
     <Resizable direction="vertical">
       <div className="codecell-wrapper">
         <Resizable direction="horizontal">
           <CodeEditor
-            onChange={(value) => setInput(value)}
-            initialValue='const foo = "bar";'
+            onChange={(value) => updateCell(cell.id, value)}
+            initialValue={cell.content}
           />
         </Resizable>
         <Iframe

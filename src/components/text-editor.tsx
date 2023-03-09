@@ -1,9 +1,15 @@
 import MDEditor from '@uiw/react-md-editor';
 import { useState, useEffect, useRef } from 'react';
+import { useActions } from '../hooks/use-actions';
+import { Cell } from '../state';
 import './text-editor.css';
 
-const TextEditor: React.FC = () => {
-  const [input, setInput] = useState('');
+interface TextEditorProps {
+  cell: Cell;
+}
+
+const TextEditor: React.FC<TextEditorProps> = ({ cell }) => {
+  const { updateCell } = useActions();
   const [editing, setEditing] = useState(true);
   const editorRef = useRef<HTMLDivElement | null>(null);
 
@@ -25,11 +31,9 @@ const TextEditor: React.FC = () => {
       <div ref={editorRef}>
         <div className="editor-wrapper">
           <MDEditor
-            value={input}
+            value={cell.content}
             height={window.innerHeight * 0.6}
-            onChange={(value) => {
-              setInput(value || '');
-            }}
+            onChange={(value) => updateCell(cell.id, value || '')}
           />
         </div>
       </div>
@@ -38,7 +42,7 @@ const TextEditor: React.FC = () => {
   return (
     <div onClick={() => setEditing(true)}>
       <div className="md-wrapper">
-        <MDEditor.Markdown source={input ? input : 'Click me to edit'} />
+        <MDEditor.Markdown source={cell.content || 'Click me to edit'} />
       </div>
     </div>
   );
