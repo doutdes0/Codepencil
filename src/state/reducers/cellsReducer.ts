@@ -32,7 +32,7 @@ const reducer = produce((state: CellState = initialState, action: Action) => {
     case ActionType.MOVE_CELL:
       const { direction } = action.payload;
       const i = state.order.findIndex((id) => id === action.payload.id);
-      const targetI = direction === 'up' ? i + 1 : i - 1;
+      const targetI = direction === 'up' ? i - 1 : i + 1;
       if (targetI < 0 || targetI > state.order.length - 1) return;
       [state.order[i], state.order[targetI]] = [state.order[targetI], state.order[i]];
       break;
