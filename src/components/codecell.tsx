@@ -30,20 +30,22 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
   }, [cell.content]);
 
   return (
-    <Resizable direction="vertical">
-      <div className="codecell-wrapper">
-        <Resizable direction="horizontal">
-          <CodeEditor
-            onChange={(value) => updateCell(cell.id, value)}
-            initialValue={cell.content}
+    <div className="codecell-wrapper">
+      <Resizable direction="vertical">
+        <div className="codecell">
+          <Resizable direction="horizontal">
+            <CodeEditor
+              onChange={(value) => updateCell(cell.id, value)}
+              initialValue={cell.content}
+            />
+          </Resizable>
+          <Iframe
+            code={code}
+            bundlerErr={err}
           />
-        </Resizable>
-        <Iframe
-          code={code}
-          bundlerErr={err}
-        />
-      </div>
-    </Resizable>
+        </div>
+      </Resizable>
+    </div>
   );
 };
 

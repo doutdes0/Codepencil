@@ -3,3 +3,6 @@
 html {
   background-color: rgb(70, 115, 155);
 }
+body {
+  padding: 1rem;
+}

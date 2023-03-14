@@ -1,0 +1,31 @@
+.action-bar-wrapper {
+  background-color: #37414b;
+  display: flex;
+  justify-content: end;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: white;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+}
+.action-bar-wrapper button {
+  background: #fcaa2f;
+  color: #ffffff;
+  border-radius: 8px;
+  border: none;
+  margin: 6px;
+  padding: 2px 23px;
+  cursor: pointer;
+}
+.action-bar-wrapper button:hover {
+  background: #ffffff;
+  color: #fcaa2f;
+  transition: 0.3s;
+}
+
+.mark {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  color: #ffffff;
+}
