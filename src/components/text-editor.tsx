@@ -10,7 +10,7 @@ interface TextEditorProps {
 
 const TextEditor: React.FC<TextEditorProps> = ({ cell }) => {
   const { updateCell } = useActions();
-  const [editing, setEditing] = useState(true);
+  const [editing, setEditing] = useState(false);
   const editorRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {

@@ -1,8 +1,8 @@
-.monaco-editor {
+.code-editor {
   height: 100%;
   width: 100%;
 }
-.monaco-wrapper {
+.code-wrapper {
   height: 100%;
   width: calc(100% - 10px);
   position: relative;
@@ -23,7 +23,7 @@
   opacity: 0;
   transition: opacity 0.3s;
 }
-.monaco-wrapper:hover .format-btn {
+.code-wrapper:hover .format-btn {
   opacity: 1;
 }
 

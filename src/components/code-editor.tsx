@@ -51,7 +51,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
     editorRef.current.setValue(formated);
   };
   return (
-    <div className="monaco-wrapper">
+    <div className="code-wrapper">
       <button
         className="format-btn"
         onClick={onFormat}
@@ -61,7 +61,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
       <MonacoEditor
         editorDidMount={onEditorDidMount}
         value={initialValue}
-        className="monaco-editor"
+        className="code-editor"
         language="javascript"
         theme="dark"
         options={{
@@ -74,6 +74,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
           scrollBeyondLastLine: false,
           automaticLayout: true,
           colorDecorators: true,
+          scrollbar: { alwaysConsumeMouseWheel: false },
         }}
       />
     </div>

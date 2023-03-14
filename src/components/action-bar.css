@@ -1,7 +1,7 @@
 .action-bar-wrapper {
   background-color: #37414b;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   border-width: 0 0 1px 0;
   border-style: solid;
   border-color: white;
