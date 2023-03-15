@@ -1,0 +1,17 @@
+.add-cell-wrapper {
+  width: 90%;
+  height: 1px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+  overflow: visible;
+}
+
+.add-cell-wrapper button {
+  background: #fcaa2f;
+  color: #ffffff;
+  border: none;
+  padding: 9px 16px;
+  cursor: pointer;
+}

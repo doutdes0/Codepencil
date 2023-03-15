@@ -37,7 +37,7 @@ const ActionBar: React.FC<ActionBarProps> = ({ id, type }) => {
         onClick={() => deleteCell(id)}
       >
         <span className="icon">
-          <i className="fas fa-trash-alt"></i>
+          <i className="fas fa-times"></i>
         </span>
       </button>
     </div>

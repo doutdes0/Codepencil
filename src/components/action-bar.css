@@ -8,13 +8,19 @@
   border-radius: 5px 5px 0 0;
   position: relative;
 }
+.action-bar-wrapper button:nth-child(-n + 3) {
+  border-width: 0 1px 0 0;
+  border-style: solid;
+  border-color: white;
+}
+.action-bar-wrapper button:nth-child(4) {
+  border-radius: 0 5px 0 0;
+}
 .action-bar-wrapper button {
   background: #fcaa2f;
   color: #ffffff;
-  border-radius: 8px;
   border: none;
-  margin: 6px;
-  padding: 2px 23px;
+  padding: 9px 16px;
   cursor: pointer;
 }
 .action-bar-wrapper button:hover {
