@@ -30,7 +30,7 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
   }, [cell.content]);
 
   return (
-    <div className="codecell-wrapper">
+    <div>
       <Resizable direction="vertical">
         <div className="codecell">
           <Resizable direction="horizontal">

@@ -3,23 +3,31 @@ import './add-cell.css';
 
 interface AddCellProps {
   nextCellId: string | null;
+  forceVisible?: boolean;
 }
 
-const AddCell: React.FC<AddCellProps> = ({ nextCellId }) => {
+const AddCell: React.FC<AddCellProps> = ({ nextCellId, forceVisible }) => {
   const { insertCell } = useActions();
   return (
-    <div className="add-cell-wrapper">
+    <div className={`add-cell-wrapper ${forceVisible ? 'force-visible' : ''}`}>
+      <div className="divider"></div>
+
       <button
         title="Add codecell"
         onClick={() => insertCell(nextCellId, 'code')}
       >
-        CODE
+        <span className="icon">
+          <i className="fas fa-code"></i>
+        </span>
       </button>
+
       <button
         title="Add textcell"
         onClick={() => insertCell(nextCellId, 'text')}
       >
-        TEXT
+        <span className="icon">
+          <i className="fas fa-pencil-alt"></i>
+        </span>
       </button>
     </div>
   );

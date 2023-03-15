@@ -20,18 +20,20 @@
   background: #fcaa2f;
   color: #ffffff;
   border: none;
-  padding: 9px 16px;
+  padding: 7px 14px;
   cursor: pointer;
+  opacity: 0.5;
 }
 .action-bar-wrapper button:hover {
   background: #ffffff;
   color: #fcaa2f;
+  opacity: 1;
   transition: 0.3s;
 }
 
 .mark {
   position: absolute;
   left: 15px;
-  top: 10px;
+  top: 8px;
   color: #ffffff;
 }

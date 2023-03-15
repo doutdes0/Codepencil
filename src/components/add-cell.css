@@ -1,17 +1,48 @@
 .add-cell-wrapper {
-  width: 90%;
-  height: 1px;
-  background-color: white;
+  width: 95%;
+  position: relative;
+  background-color: transparent;
   display: flex;
   justify-content: center;
-  margin: 10px auto;
-  overflow: visible;
+  margin: 6px auto;
+  opacity: 0;
+  transition: opacity 0.3s ease-in 0.1s;
 }
-
+.add-cell-wrapper:hover {
+  opacity: 1;
+}
+.add-cell-wrapper .divider {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: #ffffff;
+  top: 50%;
+  z-index: -1;
+}
 .add-cell-wrapper button {
+  height: 40px;
+  width: 40px;
   background: #fcaa2f;
   color: #ffffff;
   border: none;
-  padding: 9px 16px;
   cursor: pointer;
+  border-radius: 20px;
+  margin: 0 20px;
+}
+.add-cell-wrapper button:hover {
+  background: #ffffff;
+  color: #fcaa2f;
+  transition: 0.3s;
+}
+.add-cell-wrapper.force-visible {
+  animation: forceVis 0.8s;
+  opacity: 1;
+}
+@keyframes forceVis {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
