@@ -37,7 +37,7 @@ const reducer = produce((state: CellState = initialState, action: Action) => {
       [state.order[i], state.order[targetI]] = [state.order[targetI], state.order[i]];
       break;
 
-    case ActionType.INSERT_CELL_BEFORE:
+    case ActionType.INSERT_CELL:
       const cell: Cell = {
         content: '',
         type: action.payload.type,

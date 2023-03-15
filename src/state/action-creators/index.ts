@@ -31,7 +31,7 @@ export const moveCell = (id: string, direction: Direction): MoveCell => {
 
 export const insertCell = (id: string | null, type: CellTypes): InsertCell => {
   return {
-    type: ActionType.INSERT_CELL_BEFORE,
+    type: ActionType.INSERT_CELL,
     payload: {
       id,
       type,

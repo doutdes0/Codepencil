@@ -10,7 +10,7 @@ export interface DeleteCell {
   payload: string;
 }
 export interface InsertCell {
-  type: ActionType.INSERT_CELL_BEFORE;
+  type: ActionType.INSERT_CELL;
   payload: { id: string | null; type: CellTypes };
 }
 export interface UpdateCell {

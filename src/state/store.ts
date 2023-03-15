@@ -6,7 +6,7 @@ import reducers from './reducers';
 export const store = createStore(reducers, {}, applyMiddleware(thunk));
 
 store.dispatch({
-  type: ActionType.INSERT_CELL_BEFORE,
+  type: ActionType.INSERT_CELL,
   payload: {
     id: '123',
     type: 'code',
@@ -14,7 +14,7 @@ store.dispatch({
 });
 
 store.dispatch({
-  type: ActionType.INSERT_CELL_BEFORE,
+  type: ActionType.INSERT_CELL,
   payload: {
     id: '124',
     type: 'text',
