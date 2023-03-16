@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import CodeEditor from './code-editor';
 import Iframe from './iframe';
-import bundle from '../bundler';
 import Resizable from './resizable';
 import { useActions } from '../hooks/use-actions';
+import { useTypedSelector } from '../hooks/use-typed-selector';
 import { Cell } from '../state';
 import './codecell.css';
 
@@ -12,22 +12,18 @@ interface CodeCellProps {
 }
 
 const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
-  const { updateCell } = useActions();
-  const [code, setCode] = useState('');
-  const [err, setErr] = useState('');
+  const { updateCell, createBundle } = useActions();
+  const bundles = useTypedSelector((state) => state.bundles[cell.id]);
 
   useEffect(() => {
     const timer = setTimeout(async () => {
-      const res = await bundle(cell.content);
-      setCode(res.code);
-      setErr(res.err);
+      createBundle(cell.id, cell.content);
     }, 1000);
 
     return () => {
       clearTimeout(timer);
-      setErr('');
     };
-  }, [cell.content]);
+  }, [cell.id, cell.content]);
 
   return (
     <div>
@@ -39,10 +35,12 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
               initialValue={cell.content}
             />
           </Resizable>
-          <Iframe
-            code={code}
-            bundlerErr={err}
-          />
+          {bundles && (
+            <Iframe
+              code={bundles.code}
+              bundlerErr={bundles.err}
+            />
+          )}
         </div>
       </Resizable>
     </div>
