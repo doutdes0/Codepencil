@@ -17,7 +17,7 @@
   height: 100%;
   width: 100%;
   border-style: none;
-  background-color: rgb(149, 147, 147);
+  background-color: white;
 }
 .bundler-error {
   font-family: Consolas, Courier New, monospace;
