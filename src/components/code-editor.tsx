@@ -5,6 +5,7 @@ import parser from 'prettier/parser-babel';
 import codeShift from 'jscodeshift';
 import Highlighter from 'monaco-jsx-highlighter';
 import './code-editor.css';
+import { editor } from 'monaco-editor';
 
 interface CodeEditorProps {
   initialValue: string;
@@ -13,7 +14,7 @@ interface CodeEditorProps {
 
 const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
   //Reference the instance of editor to use in other methods
-  const editorRef = useRef<any>();
+  const editorRef = useRef<editor.IStandaloneCodeEditor>();
 
   const onEditorDidMount: EditorDidMount = (getValue, monacoEditor) => {
     editorRef.current = monacoEditor;
@@ -38,7 +39,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
 
   const onFormat = () => {
     //Get current value from editor
-    const unformated = editorRef.current.getModel().getValue();
+    const unformated = editorRef.current!.getModel()!.getValue();
     //Format
     const formated = prettier.format(unformated, {
       parser: 'babel',
@@ -48,7 +49,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
       singleQuote: true,
     });
     //Push formated value back to editor
-    editorRef.current.setValue(formated);
+    editorRef.current!.setValue(formated);
   };
   return (
     <div className="code-wrapper">
