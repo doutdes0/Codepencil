@@ -26,7 +26,7 @@ const reducer = produce((state: BundleState = initialState, action: Action) => {
 
     case ActionType.BUNDLE_COMPLETE:
       state[action.payload.id] = {
-        loading: true,
+        loading: false,
         code: action.payload.bundle.code,
         err: action.payload.bundle.err,
       };

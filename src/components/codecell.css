@@ -3,3 +3,27 @@
   height: calc(100% - 10px);
   width: 100%;
 }
+.spinner-wrapper {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 10px solid #37414b;
+  border-top: 10px solid #fcaa2f;
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}

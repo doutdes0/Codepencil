@@ -13,10 +13,10 @@ interface CodeCellProps {
 
 const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
   const { updateCell, createBundle } = useActions();
-  const bundles = useTypedSelector((state) => state.bundles[cell.id]);
+  const bundle = useTypedSelector((state) => state.bundles[cell.id]);
 
   useEffect(() => {
-    if (!bundles) {
+    if (!bundle) {
       createBundle(cell.id, cell.content);
       return;
     }
@@ -40,10 +40,14 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
               initialValue={cell.content}
             />
           </Resizable>
-          {bundles && (
+          {!bundle || bundle.loading ? (
+            <div className="spinner-wrapper">
+              <div className="loading-spinner"></div>
+            </div>
+          ) : (
             <Iframe
-              code={bundles.code}
-              bundlerErr={bundles.err}
+              code={bundle.code}
+              bundlerErr={bundle.err}
             />
           )}
         </div>
