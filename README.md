@@ -1,46 +1,26 @@
-# Getting Started with Create React App
+# Codepencil
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## About
 
-In the project directory, you can run:
+Welcome to Codepencil! This App is intended to be a tool to aid you in development. It allows you to:
 
-### `npm start`
+1. Create text cells and add your notes to them through a text editor, which supports well known <a href='https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax'>mark-down language</a>
+2. Create code cells, execute code inside the browser and see the result in preview window. Inside the code cell you can import any library such as React or Bootstrap.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## What's to come
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Authorization
+2. Ability to create multiple threads of text/codecells
+3. Data persistence with the help of Firebase
 
-### `npm test`
+## Tech
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This App makes use of React, Typescript, Redux/Immer, esbuild, MonacoEditor, axios, localForage.
 
-### `npm run build`
+## Setup on your PC
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone this repository or download it.
+2. Run npm i --legacy-peer-deps
+3. Run npm start
