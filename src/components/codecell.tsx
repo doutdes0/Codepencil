@@ -40,11 +40,12 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
               initialValue={cell.content}
             />
           </Resizable>
-          {!bundle || bundle.loading ? (
+          {(!bundle || bundle.loading) && (
             <div className="spinner-wrapper">
               <div className="loading-spinner"></div>
             </div>
-          ) : (
+          )}
+          {bundle && (
             <Iframe
               code={bundle.code}
               bundlerErr={bundle.err}

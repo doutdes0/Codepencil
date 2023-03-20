@@ -13,7 +13,7 @@ const html = ` <html>
   <script>
   const handleError = (err) => {
     const root = document.getElementById('root');
-    root.innerHTML = '<div style="color:red;font-family: Consolas, Courier New, monospace;">' + err + '</div>';
+    root.innerHTML = '<div style="color:red;font-family: Consolas, Courier New, monospace;background-color:white;">' + err + '</div>';
     console.error(err);
   };
     window.addEventListener('error', (e) => {

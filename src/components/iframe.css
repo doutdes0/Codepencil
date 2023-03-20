@@ -1,5 +1,5 @@
 .iframe-wrapper {
-  flex: 1;
+  flex: 1 100;
   position: relative;
   height: 100%;
   overflow: hidden;
@@ -23,6 +23,6 @@
   font-family: Consolas, Courier New, monospace;
   color: red;
   position: absolute;
-  top: 8px;
+  top: 90px;
   left: 8px;
 }

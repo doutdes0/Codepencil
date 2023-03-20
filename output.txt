@@ -1,0 +1,80 @@
+diff --git a/src/components/codecell.css b/src/components/codecell.css
+index 1994d8c..5672431 100644
+--- a/src/components/codecell.css
++++ b/src/components/codecell.css
+@@ -3,3 +3,27 @@
+   height: calc(100% - 10px);
+   width: 100%;
+ }
++.spinner-wrapper {
++  height: 100%;
++  flex: 1;
++  display: flex;
++  align-items: center;
++  justify-content: center;
++  background-color: white;
++}
++@keyframes spinner {
++  0% {
++    transform: rotate(0deg);
++  }
++  100% {
++    transform: rotate(360deg);
++  }
++}
++.loading-spinner {
++  width: 20px;
++  height: 20px;
++  border: 10px solid #37414b;
++  border-top: 10px solid #fcaa2f;
++  border-radius: 50%;
++  animation: spinner 1.5s linear infinite;
++}
+diff --git a/src/components/codecell.tsx b/src/components/codecell.tsx
+index e87349a..bcd2cb0 100644
+--- a/src/components/codecell.tsx
++++ b/src/components/codecell.tsx
+@@ -13,10 +13,10 @@ interface CodeCellProps {
+ 
+ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
+   const { updateCell, createBundle } = useActions();
+-  const bundles = useTypedSelector((state) => state.bundles[cell.id]);
++  const bundle = useTypedSelector((state) => state.bundles[cell.id]);
+ 
+   useEffect(() => {
+-    if (!bundles) {
++    if (!bundle) {
+       createBundle(cell.id, cell.content);
+       return;
+     }
+@@ -40,10 +40,14 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
+               initialValue={cell.content}
+             />
+           </Resizable>
+-          {bundles && (
++          {!bundle || bundle.loading ? (
++            <div className="spinner-wrapper">
++              <div className="loading-spinner"></div>
++            </div>
++          ) : (
+             <Iframe
+-              code={bundles.code}
+-              bundlerErr={bundles.err}
++              code={bundle.code}
++              bundlerErr={bundle.err}
+             />
+           )}
+         </div>
+diff --git a/src/state/reducers/bundlesReducer.ts b/src/state/reducers/bundlesReducer.ts
+index 53f58e1..777b28d 100644
+--- a/src/state/reducers/bundlesReducer.ts
++++ b/src/state/reducers/bundlesReducer.ts
+@@ -26,7 +26,7 @@ const reducer = produce((state: BundleState = initialState, action: Action) => {
+ 
+     case ActionType.BUNDLE_COMPLETE:
+       state[action.payload.id] = {
+-        loading: true,
++        loading: false,
+         code: action.payload.bundle.code,
+         err: action.payload.bundle.err,
+       };
