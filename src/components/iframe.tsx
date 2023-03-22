@@ -11,8 +11,8 @@ const html = ` <html>
 <body>
   <div id="root"></div>
   <script>
+  const root = document.getElementById('root');
   const handleError = (err) => {
-    const root = document.getElementById('root');
     root.innerHTML = '<div style="color:red;font-family: Consolas, Courier New, monospace;background-color:white;">' + err + '</div>';
     console.error(err);
   };
@@ -22,6 +22,7 @@ const html = ` <html>
     });
     window.addEventListener('message', (e) => {
       try {
+        root.innerHTML = '';
         eval(e.data);
       } catch (err) {
         handleError(err);
