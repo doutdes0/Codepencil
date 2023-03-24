@@ -19,9 +19,9 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
     const orderedList = order.map((id) => data[id]);
     const cumulativeCode = [
       `
-    import React from 'react';
-    import ReactDOM from 'react-dom';
-    const _root = ReactDOM.createRoot(root);
+    import _React from 'react';
+    import _ReactDOM from 'react-dom';
+    const _root = _ReactDOM.createRoot(root);
     const show = (val) => {
       if(typeof val === 'object') {
         if(val.$$typeof && val.props) {
