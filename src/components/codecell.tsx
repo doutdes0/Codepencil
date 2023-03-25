@@ -37,9 +37,15 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
     ];
 
     for (let c of orderedList) {
-      if (c.type === 'code') cumulativeCode.push(c.content);
-      if (c.id === cell.id) break;
+      if (c.id === cell.id) {
+        cumulativeCode.push(c.content);
+        break;
+      } else {
+        const regex = /show(.*)/g;
+        cumulativeCode.push(c.content.replace(regex, ''));
+      }
     }
+    console.log(cumulativeCode);
     return cumulativeCode.join('\n');
   });
 
