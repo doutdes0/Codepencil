@@ -4,7 +4,7 @@ import Iframe from './iframe';
 import Resizable from './resizable';
 import { useActions } from '../hooks/use-actions';
 import { useTypedSelector } from '../hooks/use-typed-selector';
-import { useCumulativeCode } from '../hooks/use-cumulaive-code';
+import { useCumulativeCode } from '../hooks/use-cumulative-code';
 import { Cell } from '../state';
 import './codecell.css';
 

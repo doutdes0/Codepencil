@@ -32,7 +32,6 @@ export const useCumulativeCode = (cellId: string) => {
         cumulativeCode.push(c.content.replace(regex, ''));
       }
     }
-    console.log(cumulativeCode);
     return cumulativeCode.join('\n');
   });
 };

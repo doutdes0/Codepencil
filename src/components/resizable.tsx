@@ -9,8 +9,7 @@ interface ResizableProps {
 
 const Resizable: React.FC<ResizableProps> = ({ direction, children }) => {
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
-  const [innerHeight, setInnerHeight] = useState(window.innerHeight);
-  const [width, setWidth] = useState(window.innerWidth * 0.6);
+  const [width, setWidth] = useState(window.innerWidth * 0.45);
 
   useEffect(() => {
     let timer: any;
@@ -20,9 +19,8 @@ const Resizable: React.FC<ResizableProps> = ({ direction, children }) => {
       }
       timer = setTimeout(() => {
         setInnerWidth(window.innerWidth);
-        setInnerHeight(window.innerHeight);
-        if (width > window.innerWidth * 0.6) {
-          setWidth(window.innerWidth * 0.6);
+        if (width > window.innerWidth * 0.45) {
+          setWidth(window.innerWidth * 0.45);
         }
       }, 100);
     };
@@ -40,7 +38,7 @@ const Resizable: React.FC<ResizableProps> = ({ direction, children }) => {
       width: Infinity,
       resizeHandles: ['s'],
       minConstraints: [Infinity, 24],
-      maxConstraints: [Infinity, innerHeight * 0.9],
+      maxConstraints: [Infinity, Infinity],
     };
   } else {
     resizableProps = {
