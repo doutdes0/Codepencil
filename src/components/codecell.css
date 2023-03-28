@@ -33,8 +33,8 @@
 .loading-spinner {
   width: 20px;
   height: 20px;
-  border: 10px solid #37414b;
-  border-top: 10px solid #fcaa2f;
+  border: 10px solid var(--grey);
+  border-top: 10px solid var(--green);
   border-radius: 50%;
   animation: spinner 1.5s linear infinite, fadeIn 0.7s;
 }

@@ -5,8 +5,8 @@
   --dark-grey: hsl(228deg 7.94% 12.35%);
   --grey: hsl(223.64deg 12.94% 16.67%);
   --light-grey: hsl(228deg 12.2% 40.2%);
-  --peach: #fdcb9e;
   --white: #f7f7f7;
+  --green: hsl(139.4117647059deg 58.6206896552% 54.5098039216%);
 }
 html {
   background-color: var(--black);

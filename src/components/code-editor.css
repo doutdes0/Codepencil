@@ -19,7 +19,7 @@
   font-size: 12px;
   padding: 7px 10px;
   cursor: pointer;
-  background: #fcaa2f;
+  background: var(--green);
   text-decoration: none;
   opacity: 0;
   transition: opacity 0.3s;

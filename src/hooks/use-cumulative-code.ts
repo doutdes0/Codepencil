@@ -24,12 +24,14 @@ export const useCumulativeCode = (cellId: string) => {
     ];
 
     for (let c of orderedList) {
-      if (c.id === cellId) {
-        cumulativeCode.push(c.content);
-        break;
-      } else {
-        const regex = /show(.*)/g;
-        cumulativeCode.push(c.content.replace(regex, ''));
+      if (c.type === 'code') {
+        if (c.id === cellId) {
+          cumulativeCode.push(c.content);
+          break;
+        } else {
+          const regex = /show(.*)/g;
+          cumulativeCode.push(c.content.replace(regex, ''));
+        }
       }
     }
     return cumulativeCode.join('\n');
