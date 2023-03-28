@@ -1,5 +1,5 @@
 .action-bar-wrapper {
-  background-color: #37414b;
+  background-color: var(--dark-grey);
   display: flex;
   justify-content: flex-end;
   border-width: 0 0 1px 0;
@@ -17,7 +17,7 @@
   border-radius: 0 5px 0 0;
 }
 .action-bar-wrapper button {
-  background: #fcaa2f;
+  background: var(--dark-grey);
   color: #ffffff;
   border: none;
   padding: 7px 14px;
@@ -26,7 +26,7 @@
 }
 .action-bar-wrapper button:hover {
   background: #ffffff;
-  color: #fcaa2f;
+  color: var(--light-grey);
   opacity: 1;
   transition: 0.3s;
 }

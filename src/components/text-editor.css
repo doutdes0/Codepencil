@@ -4,17 +4,17 @@
 .md-wrapper {
   padding: 1.5rem;
   border-radius: 0 0 5px 5px;
-  background-color: #37414b;
+  background-color: var(--dark-grey);
   box-shadow: 1px 15px 20px #000000b3;
 }
 .md-wrapper .wmde-markdown {
-  background-color: #37414b;
+  background-color: var(--dark-grey);
 }
 .w-md-editor-bar svg {
   display: none;
 }
 .w-md-editor-bar {
-  background-color: #37414b;
+  background-color: var(--dark-grey);
   background-repeat: no-repeat;
   background-position: 50%;
   height: 10px;
@@ -24,8 +24,12 @@
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=');
 }
 .w-md-editor-toolbar {
-  background-color: #37414b;
+  background-color: var(--grey);
 }
 .w-md-editor {
   box-shadow: none;
+}
+.w-md-editor-content,
+.wmde-markdown {
+  background-color: #202124;
 }

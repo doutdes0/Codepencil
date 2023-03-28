@@ -1,5 +1,13 @@
 @import url('./normalize.css');
 
+:root {
+  --black: hsl(225deg 9.52% 8.24%);
+  --dark-grey: hsl(228deg 7.94% 12.35%);
+  --grey: hsl(223.64deg 12.94% 16.67%);
+  --light-grey: hsl(228deg 12.2% 40.2%);
+  --peach: #fdcb9e;
+  --white: #f7f7f7;
+}
 html {
-  background-color: #8b949e;
+  background-color: var(--black);
 }
