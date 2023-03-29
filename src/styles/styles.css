@@ -1,4 +1,5 @@
 @import url('./normalize.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap');
 
 :root {
   --black: hsl(225deg 9.52% 8.24%);
@@ -7,7 +8,17 @@
   --light-grey: hsl(228deg 12.2% 40.2%);
   --white: #f7f7f7;
   --green: hsl(139.4117647059deg 58.6206896552% 54.5098039216%);
+  --font-family: 'Montserrat', 'DejaVu Sans', 'Verdana', sans-serif;
 }
-html {
+.root-layout {
+  min-height: 100vh;
   background-color: var(--black);
+  position: relative;
+  font-family: var(--font-family);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+* {
+  margin: 0;
 }
