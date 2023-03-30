@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import CodeEditor from './code-editor';
-import Iframe from './iframe';
-import Resizable from './resizable';
-import { useActions } from '../hooks/use-actions';
-import { useTypedSelector } from '../hooks/use-typed-selector';
-import { useCumulativeCode } from '../hooks/use-cumulative-code';
-import { Cell } from '../state';
+import CodeEditor from '../CodeEditor';
+import Iframe from '../Iframe';
+import Resizable from '../Resizable';
+import { useActions } from '../../hooks/use-actions';
+import { useTypedSelector } from '../../hooks/use-typed-selector';
+import { useCumulativeCode } from '../../hooks/use-cumulative-code';
+import { Cell } from '../../state';
 import './codecell.css';
 
 interface CodeCellProps {

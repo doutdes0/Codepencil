@@ -4,8 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './state';
 import App from './App';
-import Home from './components/home';
-import Threads from './components/threads';
+import Home from './pages/home';
+import Threads from './pages/threads';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 const router = createBrowserRouter([
@@ -20,6 +20,11 @@ const router = createBrowserRouter([
       {
         path: '/threads',
         element: <Threads />,
+        // children: [
+        //   {
+        //     path: `/celllist${id}`
+        //   }
+        // ]
       },
     ],
   },

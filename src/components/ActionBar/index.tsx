@@ -1,4 +1,4 @@
-import { useActions } from '../hooks/use-actions';
+import { useActions } from '../../hooks/use-actions';
 import { Fragment } from 'react';
 import './action-bar.css';
 
