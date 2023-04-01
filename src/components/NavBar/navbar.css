@@ -4,6 +4,9 @@
   z-index: 20;
   border-bottom: 1px solid var(--grey);
 }
+.scrolled {
+  backdrop-filter: blur(10px);
+}
 .navbar {
   display: flex;
   justify-content: space-between;

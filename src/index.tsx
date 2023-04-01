@@ -6,6 +6,7 @@ import { store } from './state';
 import App from './App';
 import Home from './pages/home';
 import Threads from './pages/threads';
+import CellList from './components/CellList';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 const router = createBrowserRouter([
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
         //   }
         // ]
       },
+      { path: '/celllist', element: <CellList /> },
     ],
   },
 ]);

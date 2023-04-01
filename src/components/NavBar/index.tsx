@@ -1,9 +1,26 @@
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import './navbar.css';
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const changeBG = () => {
+    if (window.scrollY > 59) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', changeBG);
+    return () => {
+      window.removeEventListener('scroll', changeBG);
+    };
+  }, []);
   return (
-    <div className="nav-sticky">
+    <div className={isScrolled ? 'nav-sticky scrolled' : 'nav-sticky'}>
       <div className="navbar">
         <div className="logo">
           <svg
@@ -20,12 +37,12 @@ const Navbar = () => {
           >
             <g
               id="SVGRepo_bgCarrier"
-              stroke-width="0"
+              strokeWidth="0"
             ></g>
             <g
               id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             ></g>
             <g id="SVGRepo_iconCarrier">
               {' '}
@@ -53,6 +70,9 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/contacts">Contacts</Link>
+          </li>
+          <li>
+            <Link to="/celllist">Dev</Link>
           </li>
         </ul>
 

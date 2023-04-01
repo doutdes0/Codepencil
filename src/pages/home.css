@@ -1,0 +1,13 @@
+.hero {
+  margin-top: 1rem;
+  padding: 2rem;
+  display: flex;
+}
+.hero-story {
+  flex: 1;
+}
+.hero-card {
+  background-image: linear-gradient(var(--light-grey) var(--grey));
+  padding: 1rem;
+  flex: 1;
+}
