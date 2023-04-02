@@ -1,13 +1,66 @@
-.hero {
+.hero-wrapper {
   margin-top: 1rem;
-  padding: 2rem;
+  padding: 1rem 1.5rem;
+  font-size: 2vw;
+}
+.hero-wrapper > h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  background-image: linear-gradient(45deg, #5cff0e, #0056ff);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-wrapper code {
+  font-family: monospace;
+  background-color: var(--light-grey);
+  border-radius: 5px;
+  padding: 0.2rem;
+}
+.hero {
   display: flex;
+  border-radius: 30px;
+  padding: 2rem 1rem 0;
+}
+.hero-1 {
+  background-image: linear-gradient(to bottom right, var(--dark-grey) 10%, var(--black));
+}
+.hero-2 {
+  background-image: linear-gradient(to top left, var(--dark-grey) 10%, var(--black));
 }
 .hero-story {
+  text-align: center;
   flex: 1;
 }
+.hero-story * {
+  margin-bottom: 1.5rem;
+}
+
+.hero-story p {
+  font-size: 1.4vw;
+  line-height: 1.8;
+}
 .hero-card {
-  background-image: linear-gradient(var(--light-grey) var(--grey));
-  padding: 1rem;
   flex: 1;
+}
+.hero-card-1 {
+  padding: 0 0 1rem 1rem;
+}
+.hero-card-2 {
+  padding: 0 1rem 1rem 0;
+}
+.hero-showcase img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.action-btn {
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  background: var(--green);
+  text-decoration: none;
 }
