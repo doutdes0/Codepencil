@@ -1,5 +1,5 @@
 import Navbar from './components/NavBar';
-import { Outlet } from 'react-router-dom';
+import { Outlet, ScrollRestoration } from 'react-router-dom';
 import Footer from './components/Footer';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './styles/styles.css';
@@ -10,6 +10,7 @@ const App = () => {
       <Navbar />
       <Outlet />
       <Footer />
+      <ScrollRestoration />
     </div>
   );
 };

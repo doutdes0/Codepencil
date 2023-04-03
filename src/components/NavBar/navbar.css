@@ -3,9 +3,10 @@
   top: 0;
   z-index: 20;
   border-bottom: 1px solid var(--grey);
+  backdrop-filter: blur(10px);
 }
 .scrolled {
-  backdrop-filter: blur(10px);
+  background-color: var(--black);
 }
 .navbar {
   display: flex;

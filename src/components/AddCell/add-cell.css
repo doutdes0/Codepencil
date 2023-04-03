@@ -17,7 +17,7 @@
   width: 100%;
   background-color: var(--grey);
   top: 50%;
-  z-index: -1;
+  z-index: 1;
 }
 .add-cell-wrapper button {
   height: 40px;
@@ -28,6 +28,7 @@
   cursor: pointer;
   border-radius: 20px;
   margin: 0 20px;
+  z-index: 2;
 }
 .add-cell-wrapper button:hover {
   transform: scale(1.1, 1.1);
