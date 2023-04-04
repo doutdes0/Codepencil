@@ -1,8 +1,17 @@
 import { Dispatch } from 'redux';
-import { UpdateCell, DeleteCell, MoveCell, InsertCell, Action } from '../actions';
+import {
+  UpdateCell,
+  DeleteCell,
+  MoveCell,
+  InsertCell,
+  Action,
+  CreateThread,
+  DeleteThread,
+} from '../actions';
 import bundle from '../../bundler';
 import { ActionType } from '../action-types';
 import { CellTypes, Direction } from '../cell';
+import { CellState } from '../reducers/cellsReducer';
 
 export const updateCell = (id: string, content: string): UpdateCell => {
   return {
@@ -56,4 +65,26 @@ export const createBundle = (id: string, rawCode: string) => async (dispatch: Di
       bundle: res,
     },
   });
+};
+
+export const createThread = (
+  name: string,
+  description: string | null,
+  cells: CellState
+): CreateThread => {
+  return {
+    type: ActionType.CREATE_THREAD,
+    payload: {
+      name,
+      description,
+      cells,
+    },
+  };
+};
+
+export const deleteThread = (id: string): DeleteThread => {
+  return {
+    type: ActionType.DELETE_THREAD,
+    payload: id,
+  };
 };

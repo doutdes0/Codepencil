@@ -1,5 +1,6 @@
 import { ActionType } from '../action-types';
 import { CellTypes, Direction } from '../cell';
+import { CellState } from '../reducers/cellsReducer';
 
 export interface MoveCell {
   type: ActionType.MOVE_CELL;
@@ -40,4 +41,27 @@ export interface BundleComplete {
     };
   };
 }
-export type Action = MoveCell | DeleteCell | InsertCell | UpdateCell | BundleStart | BundleComplete;
+
+export interface CreateThread {
+  type: ActionType.CREATE_THREAD;
+  payload: {
+    name: string;
+    description: string | null;
+    cells: CellState;
+  };
+}
+
+export interface DeleteThread {
+  type: ActionType.DELETE_THREAD;
+  payload: string;
+}
+
+export type Action =
+  | MoveCell
+  | DeleteCell
+  | InsertCell
+  | UpdateCell
+  | BundleStart
+  | BundleComplete
+  | CreateThread
+  | DeleteThread;

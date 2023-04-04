@@ -3,14 +3,14 @@ import { ActionType } from '../action-types';
 import { Cell, randomId } from '../cell';
 import produce from 'immer';
 
-interface CellState {
+export interface CellState {
   data: { [id: string]: Cell };
   loading: boolean;
   error: string | null;
   order: string[];
 }
 
-const initialState: CellState = {
+export const initialState: CellState = {
   data: {},
   loading: false,
   error: null,
