@@ -4,7 +4,7 @@ import { randomId } from '../cell';
 import { CellState, initialState as initailCellsState } from './cellsReducer';
 import produce from 'immer';
 
-interface Thread {
+export interface Thread {
   id: string;
   name: string;
   description: string | null;

@@ -6,17 +6,17 @@ import reducers from './reducers';
 export const store = createStore(reducers, {}, applyMiddleware(thunk));
 
 store.dispatch({
-  type: ActionType.INSERT_CELL,
+  type: ActionType.CREATE_THREAD,
   payload: {
-    id: '123',
-    type: 'code',
+    name: 'Test1',
+    description: 'Test',
   },
 });
 
 store.dispatch({
-  type: ActionType.INSERT_CELL,
+  type: ActionType.CREATE_THREAD,
   payload: {
-    id: '124',
-    type: 'text',
+    name: 'Test2',
+    description: 'Test',
   },
 });

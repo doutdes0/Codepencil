@@ -5,8 +5,8 @@ import { Provider } from 'react-redux';
 import { store } from './state';
 import App from './App';
 import Home from './pages/home';
-import Threads from './pages/threads';
 import CellList from './components/CellList';
+import ThreadList from './components/ThreadList';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 const router = createBrowserRouter([
@@ -20,12 +20,13 @@ const router = createBrowserRouter([
       },
       {
         path: '/threads',
-        element: <Threads />,
+        element: <ThreadList />,
         // children: [
         //   {
-        //     path: `/celllist${id}`
-        //   }
-        // ]
+        //     element: <CellList />,
+        //     path: '/celllist',
+        //   },
+        // ],
       },
       { path: '/celllist', element: <CellList /> },
     ],

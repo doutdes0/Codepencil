@@ -1,0 +1,8 @@
+.thread-item-wrapper {
+  padding: 1rem;
+  background-color: var(--light-grey);
+  color: var(--white);
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+}

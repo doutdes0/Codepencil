@@ -47,7 +47,6 @@ export interface CreateThread {
   payload: {
     name: string;
     description: string | null;
-    cells: CellState;
   };
 }
 

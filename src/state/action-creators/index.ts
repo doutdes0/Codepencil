@@ -77,7 +77,6 @@ export const createThread = (
     payload: {
       name,
       description,
-      cells,
     },
   };
 };

@@ -3,10 +3,13 @@ import CellListItem from '../CellListItem/index';
 import AddCell from '../AddCell/index';
 import { Fragment } from 'react';
 import './cell-list.css';
+import { useLocation } from 'react-router-dom';
 
 const CellList: React.FC = () => {
-  const cells = useTypedSelector(({ cells: { data, order } }) => {
-    return order.map((id) => data[id]);
+  const location = useLocation();
+  const id = location.state;
+  const cells = useTypedSelector((state) => {
+    return Object.values(state.threads.data[id].cells.data);
   });
   return (
     <div className="cell-list-wrapper">
