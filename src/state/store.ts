@@ -8,15 +8,14 @@ export const store = createStore(reducers, {}, applyMiddleware(thunk));
 store.dispatch({
   type: ActionType.CREATE_THREAD,
   payload: {
+    id: 'test12',
     name: 'Test1',
     description: 'Test',
   },
 });
 
 store.dispatch({
-  type: ActionType.CREATE_THREAD,
-  payload: {
-    name: 'Test2',
-    description: 'Test',
-  },
+  type: ActionType.INITIALIZE_CELLS,
+  payload: 'test12',
 });
+console.log('just once');

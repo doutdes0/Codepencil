@@ -9,19 +9,20 @@ import { Cell } from '../../state';
 import './codecell.css';
 
 interface CodeCellProps {
+  threadID: string;
   cell: Cell;
 }
 
-const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
+const CodeCell: React.FC<CodeCellProps> = ({ threadID, cell }) => {
   const { updateCell, createBundle } = useActions();
-  const cumulativeCode = useCumulativeCode(cell.id);
+  const cumulativeCode = useCumulativeCode(threadID, cell.id);
   useEffect(() => {
     if (!bundle) {
       createBundle(cell.id, cell.content);
       return;
     }
     const timer = setTimeout(async () => {
-      createBundle(cell.id, cumulativeCode);
+      createBundle(cell.id, cumulativeCode!);
     }, 1000);
 
     return () => {
@@ -37,7 +38,7 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
         <div className="codecell">
           <Resizable direction="horizontal">
             <CodeEditor
-              onChange={(value) => updateCell(cell.id, value)}
+              onChange={(value) => updateCell(threadID, cell.id, value)}
               initialValue={cell.content}
             />
           </Resizable>

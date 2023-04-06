@@ -8,7 +8,6 @@ export interface Thread {
   id: string;
   name: string;
   description: string | null;
-  cells: CellState;
 }
 
 interface ThreadState {
@@ -28,12 +27,11 @@ const initialThreadsState = {
 const reducer = produce((state: ThreadState = initialThreadsState, action: Action) => {
   switch (action.type) {
     case ActionType.CREATE_THREAD:
-      const { name, description } = action.payload;
+      const { name, description, id } = action.payload;
       const thread = {
-        id: randomId(),
+        id,
         name,
         description,
-        cells: initailCellsState,
       };
       state.data[thread.id] = thread;
       break;

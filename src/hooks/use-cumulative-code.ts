@@ -1,9 +1,11 @@
 import { useTypedSelector } from './use-typed-selector';
 
-export const useCumulativeCode = (cellId: string) => {
+export const useCumulativeCode = (threadID: string, cellID: string) => {
   return useTypedSelector((state) => {
-    const { order, data } = state.cells;
-    const orderedList = order.map((id) => data[id]);
+    const cells = state.cells.data[threadID];
+    const order = state.cells.order[threadID];
+
+    const orderedList = order.map((id) => cells[id]);
     const cumulativeCode = [
       `
         import _React from 'react';
@@ -25,7 +27,7 @@ export const useCumulativeCode = (cellId: string) => {
 
     for (let c of orderedList) {
       if (c.type === 'code') {
-        if (c.id === cellId) {
+        if (c.id === cellID) {
           cumulativeCode.push(c.content);
           break;
         } else {

@@ -5,10 +5,11 @@ import { Cell } from '../../state';
 import './text-editor.css';
 
 interface TextEditorProps {
+  threadID: string;
   cell: Cell;
 }
 
-const TextEditor: React.FC<TextEditorProps> = ({ cell }) => {
+const TextEditor: React.FC<TextEditorProps> = ({ threadID, cell }) => {
   const { updateCell } = useActions();
   const [editing, setEditing] = useState(false);
   const editorRef = useRef<HTMLDivElement | null>(null);
@@ -33,7 +34,7 @@ const TextEditor: React.FC<TextEditorProps> = ({ cell }) => {
           <MDEditor
             value={cell.content}
             height={window.innerHeight * 0.6}
-            onChange={(value) => updateCell(cell.id, value || '')}
+            onChange={(value) => updateCell(threadID, cell.id, value || '')}
           />
         </div>
       </div>

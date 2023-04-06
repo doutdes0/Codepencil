@@ -4,52 +4,71 @@ import { Cell, randomId } from '../cell';
 import produce from 'immer';
 
 export interface CellState {
-  data: { [id: string]: Cell };
+  data: { [threadID: string]: { [cellID: string]: Cell } };
   loading: boolean;
   error: string | null;
-  order: string[];
+  order: { [threadID: string]: string[] };
 }
 
 export const initialState: CellState = {
   data: {},
   loading: false,
   error: null,
-  order: [],
+  order: {},
 };
 
 const reducer = produce((state: CellState = initialState, action: Action) => {
   switch (action.type) {
     case ActionType.DELETE_CELL:
-      delete state.data[action.payload];
-      state.order = state.order.filter((id) => id !== action.payload);
+      {
+        const { threadID, cellID } = action.payload;
+        delete state.data[threadID][cellID];
+        state.order[threadID] = state.order[threadID].filter((id) => id !== cellID);
+      }
       break;
 
     case ActionType.UPDATE_CELL:
-      const { id, content } = action.payload;
-      state.data[id].content = content;
+      {
+        const { threadID, cellID, content } = action.payload;
+        state.data[threadID][cellID].content = content;
+      }
       break;
 
     case ActionType.MOVE_CELL:
-      const { direction } = action.payload;
-      const i = state.order.findIndex((id) => id === action.payload.id);
-      const targetI = direction === 'up' ? i - 1 : i + 1;
-      if (targetI < 0 || targetI > state.order.length - 1) return;
-      [state.order[i], state.order[targetI]] = [state.order[targetI], state.order[i]];
+      {
+        const { threadID, cellID, direction } = action.payload;
+        const i = state.order[threadID].findIndex((id) => id === cellID);
+        const targetI = direction === 'up' ? i - 1 : i + 1;
+        if (targetI < 0 || targetI > state.order[threadID].length - 1) return;
+        [state.order[threadID][i], state.order[threadID][targetI]] = [
+          state.order[threadID][targetI],
+          state.order[threadID][i],
+        ];
+      }
       break;
 
     case ActionType.INSERT_CELL:
-      const cell: Cell = {
-        content: '',
-        type: action.payload.type,
-        id: randomId(),
-      };
-      state.data[cell.id] = cell;
-      const index = state.order.findIndex((id) => id === action.payload.id);
-      if (index < 0) {
-        state.order.unshift(cell.id);
-      } else {
-        state.order.splice(index + 1, 0, cell.id);
+      {
+        const { threadID, cellID, type } = action.payload;
+        const cell: Cell = {
+          content: '',
+          type,
+          id: randomId(),
+        };
+        state.data[threadID][cell.id] = cell;
+        const i = state.order[threadID].findIndex((id) => id === cellID);
+        if (i < 0) {
+          state.order[threadID].unshift(cell.id);
+        } else {
+          state.order[threadID].splice(i + 1, 0, cell.id);
+        }
       }
+      break;
+
+    case ActionType.INITIALIZE_CELLS:
+      state.data[action.payload] = {};
+      state.order[action.payload] = [];
+
       break;
 
     default:

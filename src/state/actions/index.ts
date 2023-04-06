@@ -5,25 +5,31 @@ import { CellState } from '../reducers/cellsReducer';
 export interface MoveCell {
   type: ActionType.MOVE_CELL;
   payload: {
-    id: string;
+    threadID: string;
+    cellID: string;
     direction: Direction;
   };
 }
 export interface DeleteCell {
   type: ActionType.DELETE_CELL;
-  payload: string;
+  payload: {
+    threadID: string;
+    cellID: string;
+  };
 }
 export interface InsertCell {
   type: ActionType.INSERT_CELL;
   payload: {
-    id: string | null;
+    threadID: string;
+    cellID: string | null;
     type: CellTypes;
   };
 }
 export interface UpdateCell {
   type: ActionType.UPDATE_CELL;
   payload: {
-    id: string;
+    threadID: string;
+    cellID: string;
     content: string;
   };
 }
@@ -45,6 +51,7 @@ export interface BundleComplete {
 export interface CreateThread {
   type: ActionType.CREATE_THREAD;
   payload: {
+    id: string;
     name: string;
     description: string | null;
   };
@@ -52,6 +59,11 @@ export interface CreateThread {
 
 export interface DeleteThread {
   type: ActionType.DELETE_THREAD;
+  payload: string;
+}
+
+export interface InitializeCells {
+  type: ActionType.INITIALIZE_CELLS;
   payload: string;
 }
 
@@ -63,4 +75,5 @@ export type Action =
   | BundleStart
   | BundleComplete
   | CreateThread
-  | DeleteThread;
+  | DeleteThread
+  | InitializeCells;

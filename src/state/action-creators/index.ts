@@ -11,40 +11,50 @@ import {
 import bundle from '../../bundler';
 import { ActionType } from '../action-types';
 import { CellTypes, Direction } from '../cell';
-import { CellState } from '../reducers/cellsReducer';
+import { randomId } from '../cell';
 
-export const updateCell = (id: string, content: string): UpdateCell => {
+export const updateCell = (threadID: string, cellID: string, content: string): UpdateCell => {
   return {
     type: ActionType.UPDATE_CELL,
     payload: {
-      id,
+      threadID,
+      cellID,
       content,
     },
   };
 };
 
-export const deleteCell = (id: string): DeleteCell => {
+export const deleteCell = (threadID: string, cellID: string): DeleteCell => {
   return {
     type: ActionType.DELETE_CELL,
-    payload: id,
+    payload: {
+      threadID,
+      cellID,
+    },
   };
 };
 
-export const moveCell = (id: string, direction: Direction): MoveCell => {
+export const moveCell = (threadID: string, cellID: string, direction: Direction): MoveCell => {
   return {
     type: ActionType.MOVE_CELL,
     payload: {
-      id,
+      threadID,
+      cellID,
       direction,
     },
   };
 };
 
-export const insertCell = (id: string | null, type: CellTypes): InsertCell => {
+export const insertCell = (
+  threadID: string,
+  cellID: string | null,
+  type: CellTypes
+): InsertCell => {
   return {
     type: ActionType.INSERT_CELL,
     payload: {
-      id,
+      threadID,
+      cellID,
       type,
     },
   };
@@ -67,19 +77,22 @@ export const createBundle = (id: string, rawCode: string) => async (dispatch: Di
   });
 };
 
-export const createThread = (
-  name: string,
-  description: string | null,
-  cells: CellState
-): CreateThread => {
-  return {
-    type: ActionType.CREATE_THREAD,
-    payload: {
-      name,
-      description,
-    },
+export const createThread =
+  (name: string, description: string | null) => (dispatch: Dispatch<Action>) => {
+    const id = randomId();
+    dispatch({
+      type: ActionType.CREATE_THREAD,
+      payload: {
+        id,
+        name,
+        description,
+      },
+    });
+    dispatch({
+      type: ActionType.INITIALIZE_CELLS,
+      payload: id,
+    });
   };
-};
 
 export const deleteThread = (id: string): DeleteThread => {
   return {

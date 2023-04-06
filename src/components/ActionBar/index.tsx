@@ -3,11 +3,12 @@ import { Fragment } from 'react';
 import './action-bar.css';
 
 interface ActionBarProps {
-  id: string;
+  cellID: string;
   type: string;
+  threadID: string;
 }
 
-const ActionBar: React.FC<ActionBarProps> = ({ id, type }) => {
+const ActionBar: React.FC<ActionBarProps> = ({ cellID, type, threadID }) => {
   const { moveCell, deleteCell } = useActions();
   return (
     <Fragment>
@@ -20,7 +21,7 @@ const ActionBar: React.FC<ActionBarProps> = ({ id, type }) => {
         </div>
         <button
           title="Move cell up"
-          onClick={() => moveCell(id, 'up')}
+          onClick={() => moveCell(threadID, cellID, 'up')}
         >
           <span className="icon">
             <i className="fas fa-angle-double-up"></i>
@@ -28,7 +29,7 @@ const ActionBar: React.FC<ActionBarProps> = ({ id, type }) => {
         </button>
         <button
           title="Move cell down"
-          onClick={() => moveCell(id, 'down')}
+          onClick={() => moveCell(threadID, cellID, 'down')}
         >
           <span className="icon">
             <i className="fas fa-angle-double-down"></i>
@@ -36,7 +37,7 @@ const ActionBar: React.FC<ActionBarProps> = ({ id, type }) => {
         </button>
         <button
           title="Delete cell"
-          onClick={() => deleteCell(id)}
+          onClick={() => deleteCell(threadID, cellID)}
         >
           <span className="icon">
             <i className="fas fa-times"></i>

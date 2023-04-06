@@ -7,4 +7,5 @@ export enum ActionType {
   BUNDLE_COMPLETE = 'bundle_complete',
   CREATE_THREAD = 'create_trhread',
   DELETE_THREAD = 'delete_thread',
+  INITIALIZE_CELLS = 'initialize_cells',
 }

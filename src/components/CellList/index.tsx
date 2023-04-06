@@ -7,16 +7,17 @@ import { useLocation } from 'react-router-dom';
 
 const CellList: React.FC = () => {
   const location = useLocation();
-  const id = location.state;
+  const threadID = location.state;
   const cells = useTypedSelector((state) => {
-    return Object.values(state.threads.data[id].cells.data);
+    return Object.values(state.cells.data[threadID]);
   });
   return (
     <div className="cell-list-wrapper">
       {cells.length === 0 && (
         <AddCell
           forceVisible={cells.length === 0}
-          nextCellId={null}
+          nextCellID={null}
+          threadID={threadID}
         />
       )}
 
@@ -25,9 +26,13 @@ const CellList: React.FC = () => {
           <CellListItem
             key={cell.id}
             cell={cell}
+            threadID={threadID}
           />
 
-          <AddCell nextCellId={cell.id} />
+          <AddCell
+            nextCellID={cell.id}
+            threadID={threadID}
+          />
         </Fragment>
       ))}
     </div>

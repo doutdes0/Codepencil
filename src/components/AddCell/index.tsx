@@ -2,11 +2,12 @@ import { useActions } from '../../hooks/use-actions';
 import './add-cell.css';
 
 interface AddCellProps {
-  nextCellId: string | null;
+  threadID: string;
+  nextCellID: string | null;
   forceVisible?: boolean;
 }
 
-const AddCell: React.FC<AddCellProps> = ({ nextCellId, forceVisible }) => {
+const AddCell: React.FC<AddCellProps> = ({ threadID, nextCellID, forceVisible }) => {
   const { insertCell } = useActions();
   return (
     <div className={`add-cell-wrapper ${forceVisible ? 'force-visible' : ''}`}>
@@ -14,7 +15,7 @@ const AddCell: React.FC<AddCellProps> = ({ nextCellId, forceVisible }) => {
 
       <button
         title="Add codecell"
-        onClick={() => insertCell(nextCellId, 'code')}
+        onClick={() => insertCell(threadID, nextCellID, 'code')}
       >
         <span className="icon">
           <i className="fas fa-code"></i>
@@ -23,7 +24,7 @@ const AddCell: React.FC<AddCellProps> = ({ nextCellId, forceVisible }) => {
 
       <button
         title="Add textcell"
-        onClick={() => insertCell(nextCellId, 'text')}
+        onClick={() => insertCell(threadID, nextCellID, 'text')}
       >
         <span className="icon">
           <i className="fas fa-pencil-alt"></i>
