@@ -8,11 +8,11 @@ const ThreadList: React.FC = () => {
     return Object.values(data);
   });
   return (
-    <div onClick={() => redirect('/celllist')}>
+    <div>
       {threads.map((thread) => (
         <Fragment key={thread.id}>
           <Link
-            to="/celllist"
+            to="/cellList"
             state={thread.id}
           >
             <ThreadListItem

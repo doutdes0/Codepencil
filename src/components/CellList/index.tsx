@@ -9,7 +9,7 @@ const CellList: React.FC = () => {
   const location = useLocation();
   const threadID = location.state;
   const cells = useTypedSelector((state) => {
-    return Object.values(state.cells.data[threadID]);
+    return state.cells.order[threadID].map((id) => state.cells.data[threadID][id]);
   });
   return (
     <div className="cell-list-wrapper">

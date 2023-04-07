@@ -71,9 +71,6 @@ const Navbar = () => {
           <li>
             <Link to="/contacts">Contacts</Link>
           </li>
-          <li>
-            <Link to="/celllist">Dev</Link>
-          </li>
         </ul>
 
         <div className="nav-buttons">

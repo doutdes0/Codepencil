@@ -21,14 +21,8 @@ const router = createBrowserRouter([
       {
         path: '/threads',
         element: <ThreadList />,
-        // children: [
-        //   {
-        //     element: <CellList />,
-        //     path: '/celllist',
-        //   },
-        // ],
       },
-      { path: '/celllist', element: <CellList /> },
+      { path: '/cellList', element: <CellList /> },
     ],
   },
 ]);
