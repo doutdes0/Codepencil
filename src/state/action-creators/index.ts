@@ -1,13 +1,5 @@
 import { Dispatch } from 'redux';
-import {
-  UpdateCell,
-  DeleteCell,
-  MoveCell,
-  InsertCell,
-  Action,
-  CreateThread,
-  DeleteThread,
-} from '../actions';
+import { UpdateCell, DeleteCell, MoveCell, InsertCell, Action, DeleteThread } from '../actions';
 import bundle from '../../bundler';
 import { ActionType } from '../action-types';
 import { CellTypes, Direction } from '../cell';
@@ -92,6 +84,7 @@ export const createThread =
       type: ActionType.INITIALIZE_CELLS,
       payload: id,
     });
+    console.log('thread created');
   };
 
 export const deleteThread = (id: string): DeleteThread => {

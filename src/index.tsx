@@ -7,6 +7,7 @@ import App from './App';
 import Home from './pages/home';
 import CellList from './components/CellList';
 import ThreadList from './components/ThreadList';
+import AddThread from './components/AddThread';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 const router = createBrowserRouter([
@@ -22,7 +23,14 @@ const router = createBrowserRouter([
         path: '/threads',
         element: <ThreadList />,
       },
-      { path: '/cellList', element: <CellList /> },
+      {
+        path: '/cellList',
+        element: <CellList />,
+      },
+      {
+        path: '/addThread',
+        element: <AddThread />,
+      },
     ],
   },
 ]);

@@ -1,8 +1,11 @@
 .thread-item-wrapper {
-  padding: 1rem;
-  background-color: var(--light-grey);
+  padding: 1.5rem;
+  background-color: var(--grey);
   color: var(--white);
-  height: 200px;
+  height: 150px;
   width: 200px;
   border-radius: 10px;
+}
+.thread-item-wrapper h3 {
+  margin-bottom: 2rem;
 }

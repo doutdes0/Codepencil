@@ -48,7 +48,7 @@ const Home = () => {
               editor. <br />
               This way you won't ever lose your train of thought.
             </p>
-            <Link to="/celllist">
+            <Link to="/threads">
               <button className="action-btn">Dive in!</button>
             </Link>
           </div>

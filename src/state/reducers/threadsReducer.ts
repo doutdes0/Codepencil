@@ -1,7 +1,5 @@
 import { Action } from '../actions';
 import { ActionType } from '../action-types';
-import { randomId } from '../cell';
-import { CellState, initialState as initailCellsState } from './cellsReducer';
 import produce from 'immer';
 
 export interface Thread {

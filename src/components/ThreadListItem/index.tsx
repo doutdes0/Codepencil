@@ -9,7 +9,7 @@ const ThreadListItem: React.FC<ThreadListItemProps> = ({ thread: { name, descrip
   return (
     <div className="thread-item-wrapper">
       <h3>{name}</h3>
-      {description && <p>`${description}`</p>}
+      {description && <p>{description}</p>}
     </div>
   );
 };

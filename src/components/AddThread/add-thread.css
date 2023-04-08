@@ -1,0 +1,16 @@
+.add-thread-wrapper form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 3rem;
+}
+.add-thread-wrapper form button {
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  background: var(--green);
+  text-decoration: none;
+}
