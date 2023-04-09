@@ -31,6 +31,7 @@ const AddThread: React.FC = () => {
           value={description}
           cols={40}
           rows={10}
+          maxLength={600}
         ></textarea>
         <button type="submit">Create</button>
         <Link to="/threads">
