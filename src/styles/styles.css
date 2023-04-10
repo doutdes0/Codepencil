@@ -8,6 +8,7 @@
   --light-grey: hsl(228deg 12.2% 40.2%);
   --white: #f7f7f7;
   --green: hsl(139.4117647059deg 58.6206896552% 54.5098039216%);
+  --danger: hsl(354deg 70.5% 53.5%);
   --font-family: 'Montserrat', 'DejaVu Sans', 'Verdana', sans-serif;
 }
 .root-layout {

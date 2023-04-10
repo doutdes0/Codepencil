@@ -1,6 +1,6 @@
 import { SyntheticEvent, useState } from 'react';
 import { useActions } from '../../hooks/use-actions';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './add-thread.css';
 
 const AddThread: React.FC = () => {
@@ -33,10 +33,15 @@ const AddThread: React.FC = () => {
           rows={10}
           maxLength={600}
         ></textarea>
-        <button type="submit">Create</button>
-        <Link to="/threads">
-          <button>Discard</button>
-        </Link>
+        <div className="button-wrapper">
+          <button type="submit">Create</button>
+          <button
+            name="discard"
+            onClick={() => navigate('/threads')}
+          >
+            Discard
+          </button>
+        </div>
       </form>
     </div>
   );

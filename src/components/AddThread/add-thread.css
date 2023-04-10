@@ -1,3 +1,6 @@
+.add-thread-wrapper {
+  min-height: 100vh;
+}
 .add-thread-wrapper form {
   display: flex;
   flex-direction: column;
@@ -13,4 +16,15 @@
   cursor: pointer;
   background: var(--green);
   text-decoration: none;
+}
+.add-thread-wrapper form button[name='discard'] {
+  background: var(--danger);
+}
+.button-wrapper {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+.button-wrapper button {
+  flex: 1;
 }

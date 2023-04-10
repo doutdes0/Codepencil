@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   gap: 1.5rem;
   margin: 2rem 1rem;
+  min-height: 100vh;
 }
 .thread-list-wrapper a {
   text-decoration: none;

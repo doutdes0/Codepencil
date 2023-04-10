@@ -69,7 +69,13 @@ const Navbar = () => {
             <Link to="/threads">Threads</Link>
           </li>
           <li>
-            <Link to="/contacts">Contacts</Link>
+            <a
+              href="https://github.com/doutdes0"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Contacts
+            </a>
           </li>
         </ul>
 
