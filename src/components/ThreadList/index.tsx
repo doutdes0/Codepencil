@@ -2,7 +2,6 @@ import { useTypedSelector } from '../../hooks/use-typed-selector';
 import ThreadListItem from '../ThreadListItem';
 import AddThreadCard from '../AddThreadCard';
 import { Fragment } from 'react';
-import { Link } from 'react-router-dom';
 import './thread-list.css';
 
 const ThreadList: React.FC = () => {
@@ -14,15 +13,10 @@ const ThreadList: React.FC = () => {
       <AddThreadCard />
       {threads.map((thread) => (
         <Fragment key={thread.id}>
-          <Link
-            to="/cellList"
-            state={thread.id}
-          >
-            <ThreadListItem
-              key={thread.id}
-              thread={thread}
-            />
-          </Link>
+          <ThreadListItem
+            key={thread.id}
+            thread={thread}
+          />
         </Fragment>
       ))}
     </div>

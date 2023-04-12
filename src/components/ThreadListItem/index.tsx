@@ -1,13 +1,18 @@
 import { Thread } from '../../state/reducers/threadsReducer';
+import { useNavigate } from 'react-router-dom';
 import './thread-item.css';
 
 interface ThreadListItemProps {
   thread: Thread;
 }
 
-const ThreadListItem: React.FC<ThreadListItemProps> = ({ thread: { name, description } }) => {
+const ThreadListItem: React.FC<ThreadListItemProps> = ({ thread: { name, description, id } }) => {
+  const navigate = useNavigate();
   return (
-    <div className="thread-item-wrapper">
+    <div
+      onClick={() => navigate('/cellList', { state: id })}
+      className="thread-item-wrapper"
+    >
       <h3>{name}</h3>
       {description && <p>{description}</p>}
     </div>
