@@ -6,9 +6,13 @@ import { Fragment } from 'react';
 import './cell-list.css';
 import { useLocation } from 'react-router-dom';
 
+interface StateProps {
+  threadID: string;
+}
+
 const CellList: React.FC = () => {
   const location = useLocation();
-  const threadID = location.state;
+  const { threadID } = location.state as StateProps;
   const cells = useTypedSelector((state) => {
     return state.cells.order[threadID].map((id) => state.cells.data[threadID][id]);
   });

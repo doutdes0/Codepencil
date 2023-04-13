@@ -10,7 +10,7 @@ const ThreadListItem: React.FC<ThreadListItemProps> = ({ thread: { name, descrip
   const navigate = useNavigate();
   return (
     <div
-      onClick={() => navigate('/cellList', { state: id })}
+      onClick={() => navigate('/cellList', { state: { threadID: id } })}
       className="thread-item-wrapper"
     >
       <h3>{name}</h3>
