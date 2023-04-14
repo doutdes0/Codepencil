@@ -2,9 +2,12 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  column-gap: 1.5rem;
+  row-gap: 1.5rem;
+  align-content: flex-start;
   margin: 2rem 1rem;
   min-height: 100vh;
+  overflow-y: hidden;
 }
 .thread-list-wrapper a {
   text-decoration: none;
