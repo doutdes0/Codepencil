@@ -5,12 +5,13 @@
   height: 150px;
   width: 200px;
   border-radius: 10px;
-  overflow: auto;
+  overflow-y: auto;
 }
 .thread-item-wrapper:hover {
   cursor: pointer;
 }
 .thread-item-wrapper h3 {
+  overflow-wrap: break-word;
   margin-bottom: 2rem;
 }
 

@@ -23,6 +23,7 @@ const AddThread: React.FC = () => {
           type="text"
           value={name}
           autoComplete="off"
+          maxLength={60}
         />
         <label htmlFor="description">Description</label>
         <textarea
