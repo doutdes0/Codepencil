@@ -1,5 +1,13 @@
 import { Dispatch } from 'redux';
-import { UpdateCell, DeleteCell, MoveCell, InsertCell, Action, DeleteThread } from '../actions';
+import {
+  UpdateCell,
+  DeleteCell,
+  MoveCell,
+  InsertCell,
+  Action,
+  DeleteThread,
+  UpdateThread,
+} from '../actions';
 import bundle from '../../bundler';
 import { ActionType } from '../action-types';
 import { CellTypes, Direction } from '../cell';
@@ -91,5 +99,16 @@ export const deleteThread = (id: string): DeleteThread => {
   return {
     type: ActionType.DELETE_THREAD,
     payload: id,
+  };
+};
+
+export const updateThread = (id: string, name: string, description: string): UpdateThread => {
+  return {
+    type: ActionType.UPDATE_THREAD,
+    payload: {
+      id,
+      name,
+      description,
+    },
   };
 };

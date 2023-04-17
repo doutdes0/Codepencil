@@ -62,6 +62,15 @@ export interface DeleteThread {
   payload: string;
 }
 
+export interface UpdateThread {
+  type: ActionType.UPDATE_THREAD;
+  payload: {
+    id: string;
+    name: string;
+    description: string | null;
+  };
+}
+
 export interface InitializeCells {
   type: ActionType.INITIALIZE_CELLS;
   payload: string;
@@ -76,4 +85,5 @@ export type Action =
   | BundleComplete
   | CreateThread
   | DeleteThread
-  | InitializeCells;
+  | InitializeCells
+  | UpdateThread;

@@ -8,4 +8,5 @@ export enum ActionType {
   CREATE_THREAD = 'create_trhread',
   DELETE_THREAD = 'delete_thread',
   INITIALIZE_CELLS = 'initialize_cells',
+  UPDATE_THREAD = 'update_thread',
 }

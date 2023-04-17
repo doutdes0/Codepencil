@@ -25,17 +25,28 @@ const initialThreadsState = {
 const reducer = produce((state: ThreadState = initialThreadsState, action: Action) => {
   switch (action.type) {
     case ActionType.CREATE_THREAD:
-      const { name, description, id } = action.payload;
-      const thread = {
-        id,
-        name,
-        description,
-      };
-      state.data[thread.id] = thread;
+      {
+        const { name, description, id } = action.payload;
+        const thread = {
+          id,
+          name,
+          description,
+        };
+        state.data[thread.id] = thread;
+      }
+      break;
+
+    case ActionType.UPDATE_THREAD:
+      {
+        const { name, description, id } = action.payload;
+        state.data[id].name = name;
+        state.data[id].description = description;
+      }
       break;
 
     case ActionType.DELETE_THREAD:
       delete state.data[action.payload];
+
       break;
 
     default:
