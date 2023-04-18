@@ -1,18 +1,40 @@
 import { SyntheticEvent, useState } from 'react';
 import { useActions } from '../../hooks/use-actions';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './add-thread.css';
 
+interface NavigateProps {
+  threadID: string | null;
+  name: string | null;
+  description: string | null;
+}
+
 const AddThread: React.FC = () => {
-  const { createThread } = useActions();
+  const { createThread, updateThread } = useActions();
   const navigate = useNavigate();
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
+  const location = useLocation();
+  const {
+    threadID,
+    name: currentName,
+    description: currentDescription,
+  } = location.state
+    ? (location.state as NavigateProps)
+    : { threadID: null, name: null, description: null };
+
+  const [name, setName] = useState(currentName ? currentName : '');
+  const [description, setDescription] = useState(currentDescription ? currentDescription : '');
+
   const onSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    createThread(name, description);
+    if (location.state) {
+      updateThread(threadID!, name, description);
+    } else {
+      createThread(name, description);
+    }
+
     navigate('/threads');
   };
+
   return (
     <div className="add-thread-wrapper">
       <form onSubmit={(e) => onSubmit(e)}>
@@ -35,12 +57,12 @@ const AddThread: React.FC = () => {
           maxLength={600}
         ></textarea>
         <div className="button-wrapper">
-          <button type="submit">Create</button>
+          <button type="submit">{location.state ? 'Update' : 'Create'}</button>
           <button
             name="discard"
             onClick={() => navigate('/threads')}
           >
-            Discard
+            {location.state ? 'Discard changes' : 'Discard'}
           </button>
         </div>
       </form>
