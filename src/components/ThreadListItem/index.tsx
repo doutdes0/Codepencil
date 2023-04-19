@@ -13,7 +13,7 @@ const ThreadListItem: React.FC<ThreadListItemProps> = ({ thread: { name, descrip
   const { deleteThread } = useActions();
   const onClickEdit = (e: SyntheticEvent) => {
     e.stopPropagation();
-    navigate('/addThread', { state: { threadID: id, name, description } });
+    navigate('/add-updThread', { state: { threadID: id, name, description } });
   };
   return (
     <div

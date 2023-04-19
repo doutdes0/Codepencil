@@ -1,7 +1,7 @@
 import { SyntheticEvent, useState } from 'react';
 import { useActions } from '../../hooks/use-actions';
 import { useLocation, useNavigate } from 'react-router-dom';
-import './add-thread.css';
+import './add-upd-thread.css';
 
 interface NavigateProps {
   threadID: string | null;
@@ -9,7 +9,7 @@ interface NavigateProps {
   description: string | null;
 }
 
-const AddThread: React.FC = () => {
+const AddUpdThread: React.FC = () => {
   const { createThread, updateThread } = useActions();
   const navigate = useNavigate();
   const location = useLocation();
@@ -70,4 +70,4 @@ const AddThread: React.FC = () => {
   );
 };
 
-export default AddThread;
+export default AddUpdThread;

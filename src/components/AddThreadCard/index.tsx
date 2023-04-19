@@ -5,7 +5,7 @@ const AddThreadCard = () => {
   const navigate = useNavigate();
   return (
     <div
-      onClick={() => navigate('/addThread')}
+      onClick={() => navigate('/add-updThread')}
       className="add-thread-item-wrapper"
     >
       <div className="icon-wrapper">
