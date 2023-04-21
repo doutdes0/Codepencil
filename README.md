@@ -6,14 +6,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Welcome to Codepencil! This App is intended to be a tool to aid you in development. It allows you to:
 
-1. Create text cells and add your notes to them through a text editor, which supports well known <a href='https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax'>mark-down language</a>
-2. Create code cells, execute code inside the browser and see the result in preview window. Inside the code cell you can import any library such as React or Bootstrap.
-
-## What's to come
-
-1. Authorization
-2. Ability to create multiple threads of text/codecells
-3. Data persistence with the help of Firebase
+1. Create threads holding multiple text or code cells.
+2. Create text cells and add your notes to them through a text editor, which supports well known <a href='https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax'>mark-down language</a>
+3. Create code cells, execute code inside the browser and see the result in preview window. Inside the code cell you can import any library such as React or Bootstrap.
 
 ## Tech
 
