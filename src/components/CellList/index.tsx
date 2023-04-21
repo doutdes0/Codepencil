@@ -1,10 +1,10 @@
-import { useTypedSelector } from '../../hooks/use-typed-selector';
 import CellListItem from '../CellListItem/index';
 import AddCell from '../AddCell/index';
 import CellListCard from '../CellListCard';
+import { useTypedSelector } from '../../hooks/use-typed-selector';
 import { Fragment } from 'react';
-import './cell-list.css';
 import { useLocation } from 'react-router-dom';
+import './cell-list.css';
 
 interface NavigateProps {
   threadID: string;

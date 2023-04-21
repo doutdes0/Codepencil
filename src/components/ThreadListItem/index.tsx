@@ -1,8 +1,8 @@
 import { Thread } from '../../state/reducers/threadsReducer';
 import { useNavigate } from 'react-router-dom';
-import './thread-item.css';
 import { useActions } from '../../hooks/use-actions';
 import { SyntheticEvent } from 'react';
+import './thread-item.css';
 
 interface ThreadListItemProps {
   thread: Thread;

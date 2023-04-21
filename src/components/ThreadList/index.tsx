@@ -1,6 +1,6 @@
-import { useTypedSelector } from '../../hooks/use-typed-selector';
 import ThreadListItem from '../ThreadListItem';
 import AddThreadCard from '../AddThreadCard';
+import { useTypedSelector } from '../../hooks/use-typed-selector';
 import { Fragment } from 'react';
 import './thread-list.css';
 

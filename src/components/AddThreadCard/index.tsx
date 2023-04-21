@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import './add-thread-card.css';
 
-const AddThreadCard = () => {
+const AddThreadCard: React.FC = () => {
   const navigate = useNavigate();
   return (
     <div
