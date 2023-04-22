@@ -3,12 +3,12 @@ import showcase2 from '../assets/showcase2.png';
 import { Link } from 'react-router-dom';
 import './home.css';
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <>
       <div className="hero-wrapper">
         <h2>Welcome to Codepencil.</h2>
-        <div className="hero hero-1">
+        <div className="hero bttm-right-grad">
           <div className="hero-story">
             <h3>Create, build fast and behold the beauty of your work!</h3>
             <p>
@@ -32,7 +32,7 @@ const Home = () => {
         </div>
       </div>
       <div className="hero-wrapper">
-        <div className="hero hero-2">
+        <div className="hero bttm-left-grad">
           <div className="hero-card hero-card-2">
             <div className="hero-showcase">
               <img

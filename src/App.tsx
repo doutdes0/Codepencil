@@ -4,7 +4,7 @@ import Footer from './components/Footer';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './styles/styles.css';
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <div className="root-layout">
       <Navbar />

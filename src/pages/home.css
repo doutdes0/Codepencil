@@ -23,10 +23,10 @@
   border-radius: 30px;
   padding: 2rem 1rem 0;
 }
-.hero-1 {
+.bttm-right-grad {
   background-image: linear-gradient(to bottom right, var(--dark-grey) 10%, var(--black));
 }
-.hero-2 {
+.bttm-left-grad {
   background-image: linear-gradient(to bottom left, var(--dark-grey) 10%, var(--black));
 }
 .hero-story {
@@ -75,5 +75,13 @@ img {
   }
   to {
     opacity: 1;
+  }
+}
+@media screen and (max-width: 800px) {
+  .hero {
+    display: flex;
+    border-radius: 30px;
+    padding: 2rem 1rem 0;
+    flex-direction: column;
   }
 }
