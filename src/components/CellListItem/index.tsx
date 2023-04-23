@@ -10,7 +10,7 @@ interface CellListItemProps {
 
 const CellListItem: React.FC<CellListItemProps> = ({ threadID, cell }) => {
   return (
-    <div>
+    <>
       <ActionBar
         cellID={cell.id}
         type={cell.type}
@@ -28,7 +28,7 @@ const CellListItem: React.FC<CellListItemProps> = ({ threadID, cell }) => {
           threadID={threadID}
         />
       )}
-    </div>
+    </>
   );
 };
 

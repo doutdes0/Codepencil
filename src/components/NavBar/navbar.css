@@ -38,22 +38,6 @@
   background-color: var(--light-grey);
   transition: 0.3s;
 }
-.nav-buttons {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 0.6rem;
-}
-.nav-buttons button {
-  border-radius: 4px;
-  border: none;
-  color: #ffffff;
-  font-size: 0.9rem;
-  padding: 0.5rem 0.75rem;
-  cursor: pointer;
-  background: var(--green);
-  text-decoration: none;
-}
 
 .nav-buttons button:first-child:hover {
   background-color: #3eb363;
@@ -65,4 +49,13 @@
 .nav-buttons button:last-child:hover {
   background-color: #494c5c;
   transition: 0.3s;
+}
+
+@media screen and (max-width: 530px) {
+  .links {
+    font-size: 0.8rem;
+  }
+  .logo {
+    font-size: 0.7rem;
+  }
 }

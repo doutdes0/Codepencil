@@ -33,7 +33,7 @@ const CodeCell: React.FC<CodeCellProps> = ({ threadID, cell }) => {
 
   const bundle = useTypedSelector((state) => state.bundles[cell.id]);
   return (
-    <div>
+    <>
       <Resizable direction="vertical">
         <div className="codecell">
           <Resizable direction="horizontal">
@@ -55,7 +55,7 @@ const CodeCell: React.FC<CodeCellProps> = ({ threadID, cell }) => {
           )}
         </div>
       </Resizable>
-    </div>
+    </>
   );
 };
 

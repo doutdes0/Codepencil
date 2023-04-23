@@ -79,9 +79,10 @@ img {
 }
 @media screen and (max-width: 800px) {
   .hero {
-    display: flex;
-    border-radius: 30px;
-    padding: 2rem 1rem 0;
     flex-direction: column;
+  }
+  .action-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 1.8rem;
   }
 }

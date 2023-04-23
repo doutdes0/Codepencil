@@ -3,7 +3,6 @@
   color: var(--white);
   height: 198px;
   width: 248px;
-  border-radius: 10px;
   overflow: hidden;
 }
 .add-thread-item-wrapper:hover {
