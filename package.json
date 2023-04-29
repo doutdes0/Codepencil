@@ -2,7 +2,7 @@
   "name": "codepencil",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://doutdes0.github.io/Codepencil",
+  "homepage": "https://doutdes0.github.io/Codepencil/",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@monaco-editor/react": "3.7.5",
