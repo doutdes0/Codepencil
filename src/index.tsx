@@ -10,30 +10,33 @@ import ThreadList from './components/ThreadList';
 import AddUpdThread from './components/AddUpdThread';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-    children: [
-      {
-        path: '/',
-        element: <Home />,
-      },
-      {
-        path: '/threads',
-        element: <ThreadList />,
-      },
-      {
-        path: '/cellList',
-        element: <CellList />,
-      },
-      {
-        path: '/add-updThread',
-        element: <AddUpdThread />,
-      },
-    ],
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <App />,
+      children: [
+        {
+          path: '/',
+          element: <Home />,
+        },
+        {
+          path: '/threads',
+          element: <ThreadList />,
+        },
+        {
+          path: '/cellList',
+          element: <CellList />,
+        },
+        {
+          path: '/add-updThread',
+          element: <AddUpdThread />,
+        },
+      ],
+    },
+  ],
+  { basename: '/Codepencil' }
+);
 
 root.render(
   <React.StrictMode>
