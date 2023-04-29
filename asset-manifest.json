@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/doutdes0/Codepencil/static/css/main.0d14b4f3.chunk.css",
+    "main.js": "/doutdes0/Codepencil/static/js/main.1a909fb1.chunk.js",
+    "main.js.map": "/doutdes0/Codepencil/static/js/main.1a909fb1.chunk.js.map",
+    "runtime-main.js": "/doutdes0/Codepencil/static/js/runtime-main.2bbbb55c.js",
+    "runtime-main.js.map": "/doutdes0/Codepencil/static/js/runtime-main.2bbbb55c.js.map",
+    "static/css/2.8a98129e.chunk.css": "/doutdes0/Codepencil/static/css/2.8a98129e.chunk.css",
+    "static/js/2.32d80977.chunk.js": "/doutdes0/Codepencil/static/js/2.32d80977.chunk.js",
+    "static/js/2.32d80977.chunk.js.map": "/doutdes0/Codepencil/static/js/2.32d80977.chunk.js.map",
+    "index.html": "/doutdes0/Codepencil/index.html",
+    "static/css/2.8a98129e.chunk.css.map": "/doutdes0/Codepencil/static/css/2.8a98129e.chunk.css.map",
+    "static/css/main.0d14b4f3.chunk.css.map": "/doutdes0/Codepencil/static/css/main.0d14b4f3.chunk.css.map",
+    "static/js/2.32d80977.chunk.js.LICENSE.txt": "/doutdes0/Codepencil/static/js/2.32d80977.chunk.js.LICENSE.txt",
+    "static/media/all.min.css": "/doutdes0/Codepencil/static/media/fa-solid-900.46fdbd2d.woff",
+    "static/media/github-logo.0d286971.svg": "/doutdes0/Codepencil/static/media/github-logo.0d286971.svg",
+    "static/media/logo.e6ebb4f3.svg": "/doutdes0/Codepencil/static/media/logo.e6ebb4f3.svg",
+    "static/media/showcase1.4a42686b.png": "/doutdes0/Codepencil/static/media/showcase1.4a42686b.png",
+    "static/media/showcase2.e555c050.png": "/doutdes0/Codepencil/static/media/showcase2.e555c050.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2bbbb55c.js",
+    "static/css/2.8a98129e.chunk.css",
+    "static/js/2.32d80977.chunk.js",
+    "static/css/main.0d14b4f3.chunk.css",
+    "static/js/main.1a909fb1.chunk.js"
+  ]
+}
