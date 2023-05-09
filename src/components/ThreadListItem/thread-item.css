@@ -11,20 +11,8 @@
   cursor: pointer;
   --angle: 0deg;
   border: 1px solid;
-  border-image: conic-gradient(
-      from var(--angle),
-      #ff2400,
-      #e81d1d,
-      #e8b71d,
-      #e3e81d,
-      #1de840,
-      #1ddde8,
-      #2b1de8,
-      #dd00f3,
-      #dd00f3
-    )
-    1;
-  animation: 10s rotate linear infinite;
+  border-image: conic-gradient(from var(--angle), var(--border-gradient)) 1;
+  animation: rotate 10s linear infinite;
 }
 .thread-item-wrapper h3 {
   overflow-wrap: break-word;
