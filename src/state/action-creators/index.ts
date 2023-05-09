@@ -92,7 +92,6 @@ export const createThread =
       type: ActionType.INITIALIZE_CELLS,
       payload: id,
     });
-    console.log('thread created');
   };
 
 export const deleteThread = (id: string): DeleteThread => {
