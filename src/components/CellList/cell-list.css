@@ -1,3 +1,10 @@
 .cell-list-wrapper {
   padding: 2rem 10vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.cell-list-wrapper h2,
+p {
+  overflow-wrap: break-word;
 }

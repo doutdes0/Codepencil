@@ -7,6 +7,7 @@
   margin: 6px auto;
   opacity: 0;
   transition: opacity 0.3s ease-in 0.1s;
+  opacity: 0.2;
 }
 .add-cell-wrapper:hover {
   opacity: 1;

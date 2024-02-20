@@ -1,8 +1,9 @@
 .add-thread-item-wrapper {
   background-color: var(--grey);
   color: var(--white);
-  height: 198px;
-  width: 248px;
+  height: 200px;
+  width: 250px;
+  border-radius: 10px;
   overflow: hidden;
 }
 .add-thread-item-wrapper:hover {

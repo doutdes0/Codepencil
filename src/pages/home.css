@@ -1,12 +1,9 @@
 .hero-wrapper {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding: 1rem 1.5rem;
-  font-size: 2vw;
+  padding: 1rem 3rem;
 }
 .hero-wrapper > h2 {
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin: 2.5rem 0;
   background-image: linear-gradient(45deg, #5cff0e, #0056ff);
   background-size: 100%;
   background-clip: text;
@@ -19,37 +16,54 @@
   padding: 0.2rem;
 }
 .hero {
+  position: relative;
   display: flex;
   border-radius: 30px;
-  padding: 2rem 1rem 0;
+  padding: 2rem 3rem;
+  gap: 1.5rem;
 }
-.bttm-right-grad {
-  background-image: linear-gradient(to bottom right, var(--dark-grey) 10%, var(--black));
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px; /* control the border thickness */
+  border-radius: 30px;
+  opacity: 0.2;
+  background: linear-gradient(45deg, #5cff0e, #0056ff);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
-.bttm-left-grad {
-  background-image: linear-gradient(to bottom left, var(--dark-grey) 10%, var(--black));
+.hero-1 {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--dark-grey) 10%,
+    var(--black)
+  );
+}
+.hero-2 {
+  background-image: linear-gradient(
+    to bottom left,
+    var(--dark-grey) 10%,
+    var(--black)
+  );
 }
 .hero-story {
-  text-align: center;
-  flex: 1;
-}
-.hero-story * {
-  margin-bottom: 1.5rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .hero-story p {
-  font-size: 1.4vw;
   line-height: 1.8;
 }
-.hero-card {
-  flex: 1;
+
+.hero-story a {
+  align-self: center;
 }
-.hero-card-1 {
-  padding: 0 0 1rem 1rem;
-}
-.hero-card-2 {
-  padding: 0 1rem 1rem 0;
-}
+
 .hero-showcase img {
   width: 100%;
   height: 100%;

@@ -2,8 +2,9 @@
   padding: 1.5rem;
   background-color: var(--grey);
   color: var(--white);
-  height: 150px;
-  width: 200px;
+  height: 200px;
+  width: 250px;
+  border-radius: 10px;
   overflow-y: auto;
   position: relative;
 }
@@ -52,7 +53,7 @@
   transition: 0.1s;
 }
 @property --angle {
-  syntax: '<angle>';
+  syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
 }

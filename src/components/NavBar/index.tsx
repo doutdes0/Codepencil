@@ -1,13 +1,12 @@
-import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import logo from '../../assets/logo.svg';
-import './navbar.css';
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import "./navbar.css";
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const changeBG = () => {
-    if (window.scrollY > 59) {
+    if (window.scrollY > 150) {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
@@ -15,19 +14,15 @@ const Navbar: React.FC = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', changeBG);
+    window.addEventListener("scroll", changeBG);
     return () => {
-      window.removeEventListener('scroll', changeBG);
+      window.removeEventListener("scroll", changeBG);
     };
   }, []);
   return (
-    <div className={isScrolled ? 'nav-sticky scrolled' : 'nav-sticky'}>
+    <div className={isScrolled ? "nav-sticky scrolled" : "nav-sticky"}>
       <div className="navbar">
         <div className="logo">
-          <img
-            src={logo}
-            alt="logo"
-          />
           <h3>CODEPENCIL</h3>
         </div>
 

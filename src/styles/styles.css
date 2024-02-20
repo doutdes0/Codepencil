@@ -1,5 +1,5 @@
-@import url('./normalize.css');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap');
+@import url("./normalize.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap");
 
 :root {
   --black: hsl(225deg 9.52% 8.24%);
@@ -9,9 +9,7 @@
   --white: #f7f7f7;
   --green: hsl(139.4117647059deg 58.6206896552% 54.5098039216%);
   --danger: hsl(354deg 70.5% 53.5%);
-  --font-family: 'Montserrat', 'DejaVu Sans', 'Verdana', sans-serif;
-  --border-gradient: #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #ff2400;
-  --divider-gradient: #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3;
+  --font-family: "Montserrat", "DejaVu Sans", "Verdana", sans-serif;
 }
 .root-layout {
   min-height: 100vh;
@@ -21,7 +19,51 @@
   color: var(--white);
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  font-size: calc(15px + 0.390625vw);
+  gap: 2rem;
 }
 * {
   margin: 0;
+  box-sizing: border-box;
+}
+
+/* Small devices such as large phones (640px and up) */
+@media only screen and (min-width: 0) {
+  .hero {
+    flex-direction: column;
+  }
+  .hero-card {
+    display: none;
+  }
+}
+
+/* Medium devices such as tablets (768px and up) */
+@media only screen and (min-width: 48em) {
+  .hero {
+    flex-direction: column;
+  }
+  .hero-card {
+    display: block;
+  }
+}
+
+/* Large devices such as laptops (1024px and up) */
+@media only screen and (min-width: 64em) {
+  .hero {
+    flex-direction: column;
+  }
+  .hero-card {
+    display: block;
+  }
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media only screen and (min-width: 80em) {
+  .hero {
+    flex-direction: row;
+  }
+  .hero-card {
+    display: block;
+  }
 }

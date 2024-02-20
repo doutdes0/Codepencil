@@ -4,6 +4,7 @@
   z-index: 20;
   border-bottom: 1px solid var(--grey);
   backdrop-filter: blur(10px);
+  --webkit-backdrop-filter: blur(10px);
 }
 .scrolled {
   background-color: var(--black);
