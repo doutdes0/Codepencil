@@ -6,7 +6,7 @@ const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const changeBG = () => {
-    if (window.scrollY > 150) {
+    if (window.scrollY > 300) {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);

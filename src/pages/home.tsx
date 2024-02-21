@@ -8,7 +8,8 @@ const Home: React.FC = () => {
     <>
       <div className="hero-wrapper">
         <h2>Welcome to Codepencil.</h2>
-        <div className="hero bttm-right-grad">
+        <h4>A code sandbox.</h4>
+        <div className="hero hero-1">
           <div className="hero-story">
             <h3>Create, build fast and behold the beauty of your work!</h3>
             <p>
@@ -42,7 +43,9 @@ const Home: React.FC = () => {
             <p>
               Writing notes is as easy as creating a README file with the help
               of inbuilt markdown editor. <br />
-              This way you won't ever lose your train of thought.
+              This way you won't ever lose your train of thought. <br />
+              Now, what are you waiting for? Create your first thread and try
+              out the editors!
             </p>
             <Link to="/threads">
               <button className="action-btn">Dive in!</button>

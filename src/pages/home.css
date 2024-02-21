@@ -1,13 +1,14 @@
-.hero-wrapper {
-  padding: 1rem 3rem;
-}
 .hero-wrapper > h2 {
   text-align: center;
-  margin: 2.5rem 0;
+  margin: 2.5rem 0 1rem;
   background-image: linear-gradient(45deg, #5cff0e, #0056ff);
   background-size: 100%;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.hero-wrapper > h4 {
+  text-align: center;
+  margin-bottom: 2.5rem;
 }
 .hero-wrapper code {
   font-family: monospace;
@@ -73,7 +74,6 @@
   border-radius: 4px;
   border: none;
   color: #ffffff;
-  font-size: 1rem;
   padding: 0.5rem 2rem;
   cursor: pointer;
   background: var(--green);

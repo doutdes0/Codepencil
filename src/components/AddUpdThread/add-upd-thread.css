@@ -17,7 +17,7 @@
   background: var(--green);
   text-decoration: none;
 }
-.add-thread-wrapper form button[name='discard'] {
+.add-thread-wrapper form button[name="discard"] {
   background: var(--danger);
 }
 .button-wrapper {
@@ -27,4 +27,20 @@
 }
 .button-wrapper button {
   flex: 1;
+}
+
+.add-thread-wrapper textarea {
+  border: none;
+  outline: none;
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  resize: none;
+}
+
+.add-thread-wrapper input {
+  border: none;
+  outline: none;
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  resize: none;
 }
