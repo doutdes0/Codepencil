@@ -21,15 +21,14 @@
   z-index: 1;
 }
 .add-cell-wrapper button {
-  height: 40px;
-  width: 40px;
   background: var(--light-grey);
   color: var(--white);
   border: none;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 60px;
   margin: 0 20px;
   z-index: 2;
+  padding: 10px;
 }
 .add-cell-wrapper button:hover {
   transform: scale(1.1, 1.1);
