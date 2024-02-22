@@ -55,12 +55,3 @@
   background-color: #494c5c;
   transition: 0.3s;
 }
-
-@media screen and (max-width: 530px) {
-  .links {
-    font-size: 0.8rem;
-  }
-  .logo {
-    font-size: 0.7rem;
-  }
-}

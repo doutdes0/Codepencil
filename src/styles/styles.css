@@ -10,6 +10,10 @@
   --green: hsl(139.4117647059deg 58.6206896552% 54.5098039216%);
   --danger: hsl(354deg 70.5% 53.5%);
   --font-family: "Montserrat", "DejaVu Sans", "Verdana", sans-serif;
+  --divider-gradient: #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8,
+    #2b1de8, #dd00f3;
+  --border-gradient: #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8,
+    #2b1de8, #dd00f3, #ff2400;
 }
 .root-layout {
   min-height: 100vh;
@@ -20,7 +24,7 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  font-size: calc(15px + 0.390625vw);
+  font-size: calc(15px + 0.3vw);
   gap: 2rem;
 }
 * {
@@ -28,7 +32,7 @@
   box-sizing: border-box;
 }
 
-/* Small devices such as large phones (640px and up) */
+/* Small devices such as large phones (0px and up) */
 @media only screen and (min-width: 0) {
   .hero {
     flex-direction: column;

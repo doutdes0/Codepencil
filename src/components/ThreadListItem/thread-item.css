@@ -4,7 +4,6 @@
   color: var(--white);
   height: 200px;
   width: 250px;
-  border-radius: 10px;
   overflow-y: auto;
   position: relative;
 }

@@ -1,5 +1,5 @@
-import showcase1 from "../assests/showcase1.png";
-import showcase2 from "../assests/showcase2.png";
+import showcase1 from "../assets/showcase1.png";
+import showcase2 from "../assets/showcase2.png";
 import { Link } from "react-router-dom";
 import "./home.css";
 
